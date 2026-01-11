@@ -36,4 +36,7 @@ header a {
   text-decoration: none;
   color: white;
   padding-top: 1.5rem;
+}
+header .btn {
+  display: block;
 }/*# sourceMappingURL=style.css.map */
