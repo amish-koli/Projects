@@ -18,3 +18,5 @@ This project is part of my learning journey in web development and will be impro
 ## Live Preview
 (Coming soon)
 
+## Can't do shit 
+
