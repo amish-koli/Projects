@@ -39,7 +39,24 @@ header{
           padding-top: 1.5rem;
         }
       .btn{
-        display: block;
-      }
-
+        height: auto;
+        width: auto;
+        padding-top: 1.5rem;
+          #sign-up{
+            padding: 0.5rem 1rem;
+            background-color: #575656;
+            color: #ffffff;
+            border: solid 1px #ffffff;
+            border-radius: 5px;
+            cursor: pointer;
+                 }
+          #log-in{
+            padding: 0.6rem 1rem;
+            background-color: #2c5cdf;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+                  }
+            }
 }
