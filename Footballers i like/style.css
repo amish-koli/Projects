@@ -1,0 +1,70 @@
+@font-face {
+    font-family: "Kastroo";
+    src: url("./KASTROO.woff");
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+}
+#main{
+    height: 100%;
+    width: 100%;
+    background-color:white;
+}
+#nav{
+    
+    font-family:"Kastroo";
+}
+#nav a{
+    margin:10px ;
+    text-decoration: none;
+    font-family:"Kastroo";
+    color:black;
+}
+#nav h1{
+    display: inline;
+    margin-left: 40%;
+    margin-top: 100px;
+}
+#nav a:last-child{
+    margin-left: 800px;
+}
+#top{
+    font-family: "Kastroo";
+    font-size: 400px;
+    text-align: center;
+    margin-top:40px;
+}
+#details{
+    margin:50px;
+    width: 600px;
+    font-family: "Kastroo";
+}
+#details h2{
+    margin-bottom:10px;
+    font-size: 40px;
+}
+
+#A{
+    position:absolute;
+    height: 350px;
+    bottom: 70px;
+    left:45%;
+}
+#B{
+    position:absolute;
+    height: 500px;
+    bottom: 90px;
+    left:60%;
+}
+#C{
+    position:absolute;
+    height: 400px;
+    bottom: 60px;
+    left:80%;
+}
