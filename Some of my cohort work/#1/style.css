@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "Neue Machina";
+  src: url("NeueMachina-Regular_DQCmjH1st.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+p {
+  font-family: "Neue Machina", sans-serif;
+  text-align: center;
+  font-size: 100px;
+}
