@@ -1,0 +1,139 @@
+/* =====================
+   GLOBAL RESET
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Apple", Arial, Helvetica, sans-serif;
+  background-color: #fff;
+  color: #000;
+}
+
+/* =====================
+   FONT
+===================== */
+@font-face {
+  font-family: "Apple";
+  src: url("./fonts/sf-pro-text_regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* =====================
+   NAVBAR
+===================== */
+#nav {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 40px;
+  font-size: 14px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-icons,
+.logo {
+  display: flex;
+  gap: 18px;
+  font-size: 18px;
+}
+
+/* =====================
+   HERO SECTION
+===================== */
+#hero {
+  background-color: #f5f5f7;
+  min-height: calc(100vh - 44px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* TEXT */
+.hero-text {
+  text-align: center;
+  padding-top: 100px;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.hero-text h2 {
+  font-size: 28px;
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+.hero-text p {
+  margin-top: 12px;
+  font-size: 18px;
+  color: #555;
+}
+
+/* BUTTONS */
+.hero-buttons {
+  margin-top: 24px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+button {
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* OUTLINE */
+.btn-outline {
+  background: transparent;
+  border: 1px solid #0071e3;
+  color: #0071e3;
+}
+
+.btn-outline:hover {
+  background-color: #0071e3;
+  color: #fff;
+}
+
+/* PRIMARY */
+.btn-primary {
+  background-color: #0071e3;
+  border: none;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #005bb5;
+  transform: translateY(-2px);
+}
+
+/* =====================
+   HERO IMAGE
+===================== */
+#hero-image {
+  margin-bottom: 60px;
+
+  width: 100%;
+  height: min(60vh, 600px);
+
+  background-image: url("https://www.apple.com/in/home/heroes/apple-fitness-plus/images/hero_apple_fitness_plus__fvrnctwbcgqe_small.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
