@@ -14,11 +14,68 @@ body {
     src: url("NeueMachina-Regular_DQCmjH1st.ttf") format("truetype");
 }
 :root{
-    --primary-color: #191919;
-    --font-color: #fff;
+    /* color: ; */
+        --primary-color: #191919;
+    /* text color */
+        --font-color: #fff;
+    /* spacing */
+        --space-xs: 4px;
+        --space-s: 8px;
+        --space-m: 16px;
+        --space-l: 24px;
+        --space-xl: 32px;
+        --space-2xl: 40px;
+        --space-3xl: 48px;
+    /* border color */
+        --border-color: #fff;
+    /* border-radius  */
+        --border-radius-xs: 4px;
+        --border-radius-s: 8px;
+        --border-radius-m: 12px;
+        --border-radius-l: 16px;
+        --border-radius-xl: 20px;
+        --border-radius-2xl: 24px;
+
 }
 html{
     background-color: var(--primary-color);
     color: var(--font-color);
     font-family: "Machina";
+}
+
+main,section{
+    width: 100%;
+    height: 100%;
+}
+section{
+    padding: var(--space-2xl);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: var(--space-l);
+}
+section .info-board{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+.info-board {
+    padding: var(--space-s) var(--space-m);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-m);
+}
+.game-board{
+    border:1px solid var(--border-color);
+    flex-grow: 1;
+    display: grid;
+   grid-template-columns: repeat(auto-fill,minmax(30px,1fr));
+   grid-template-rows: repeat(auto-fill,minmax(30px,1fr));
+    
+}
+.block{
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--border-color);
 }
