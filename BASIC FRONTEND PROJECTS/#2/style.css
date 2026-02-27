@@ -16,6 +16,8 @@ body {
 :root{
     /* color: ; */
         --primary-color: #191919;
+        --block:rgb(237, 244, 95);
+        --food:red;
     /* text color */
         --font-color: #fff;
     /* spacing */
@@ -78,4 +80,11 @@ section .info-board{
     width: 30px;
     height: 30px;
     border: 1px solid var(--border-color);
+}
+.filld{
+    background-color: var(--block);
+
+}
+.food{
+    background-color: var(--food);
 }
