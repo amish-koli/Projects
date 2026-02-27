@@ -15,6 +15,7 @@ body {
     background-color:rgb(221, 221, 140) ;
     border: 2px solid white;
     border-radius: 10px;
+
 }
 #container{
     position: relative;
@@ -25,7 +26,21 @@ body {
     height: 75vh;
     border: 2px solid white;
     border-radius: 10px;
+    padding: 10px;
     display:grid;
     grid-template-columns: repeat(3,1fr);
-    padding: 10px;
+    grid:
+    "one two three"30%
+    "one two three"20%
+    "one five three"10%
+    "four five six"auto
+    / 1fr 1fr 1fr
+    ;
+    grid-gap:5px 5px;
 }
+#one { grid-area: one; }
+#two { grid-area: two; }
+#three { grid-area: three; }
+#four { grid-area: four; }
+#five { grid-area: five; }
+#six { grid-area: six; }
