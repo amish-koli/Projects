@@ -15,7 +15,7 @@ body {
 }
 :root{
     /* color: ; */
-        --primary-color: #191919;
+        --primary-color:rgb(38, 38, 38);
         --block:rgb(237, 244, 95);
         --food:red;
     /* text color */
@@ -87,4 +87,39 @@ section .info-board{
 }
 .food{
     background-color: var(--food);
+}
+.modal{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    background-color: rgb(38, 38, 38);
+    backdrop-filter:blur(4px);
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .start-game
+,.modal .game-over{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-l);
+}
+ .btn{
+    padding: var(--space-s) var(--space-m);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-m);
+    background-color: transparent;
+    color: var(--font-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btn:hover{
+    transform: scale(1.1);
+}
+.modal .game-over {
+    display: none;
 }
