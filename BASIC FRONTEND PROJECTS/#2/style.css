@@ -1,0 +1,24 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+@font-face {
+    font-family: "Machina";
+    src: url("NeueMachina-Regular_DQCmjH1st.ttf") format("truetype");
+}
+:root{
+    --primary-color: #191919;
+    --font-color: #fff;
+}
+html{
+    background-color: var(--primary-color);
+    color: var(--font-color);
+    font-family: "Machina";
+}
