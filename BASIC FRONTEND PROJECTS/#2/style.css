@@ -79,7 +79,7 @@ section .info-board{
 .block{
     width: 30px;
     height: 30px;
-    border: 1px solid var(--border-color);
+    border: 2px solid var(--border-color);
 }
 .filld{
     background-color: var(--block);
