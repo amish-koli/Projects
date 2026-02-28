@@ -1,0 +1,82 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Machina";
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+:root{
+    --primary-color: #e3e3e3;
+    --secondary-color: #2ecc71;
+    --text-color: #ffffff;
+    --background-color: #262626;
+}
+@font-face {
+    font-family: "Machina";
+    src: url("KASTROO.woff") format("woff");
+}
+body{
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    cursor: none;
+}
+.elem{
+    width: 100%;
+    height: 20vh;
+    border: 2px solid var(--primary-color);
+    display: flex;
+    align-items: flex-end;
+    font-size: 10rem;
+}
+#one,#two,#three,#four{
+    opacity:0;
+    transition: all 0.5s ease;
+    mix-blend-mode: exclusion;
+}
+#one{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-image: url(https://i.pinimg.com/736x/a7/e6/28/a7e6280c61ff034fecc98313413907cc.jpg);
+    background-position: top;
+    background-size: cover;
+}
+#two{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-image: url(https://i.pinimg.com/736x/b3/19/4c/b3194ced8409bc1aea4104bf0354557c.jpg);
+    background-position: top;
+    background-size: cover;
+}
+#three{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-image: url(https://i.pinimg.com/1200x/09/10/f7/0910f7c2e26a8c6888ad5b60ed6b99c7.jpg);
+    background-position: top;
+    background-size: cover;
+}
+#four{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-image: url(https://i.pinimg.com/736x/bc/c8/a8/bcc8a827e370371c121c88bf2080a1de.jpg);
+    background-position: center;
+    background-size: cover;
+}
