@@ -1,0 +1,95 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body{
+    background-image: url(https://i.pinimg.com/1200x/fa/a5/ec/faa5eca8949403de1975fec53cafc1e2.jpg);
+    background-position: center;
+    background-size: cover;
+    
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+section{
+    width: 60vw;
+    height: 90vh;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.2);
+    border-radius:20px;
+    padding:20px;
+    display: grid;
+    grid:
+    "one one two two two two three three" 1fr
+    "one one two two two two three three" 1fr
+    "four four five five six six three three" 1fr
+    "four four five five six six eight eight"1fr
+    "seven seven seven seven six six eight eight"1fr
+    "seven seven seven seven six six  eight eight"1fr
+    / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr
+    ;
+    grid-gap:4% 4%;
+}
+.item{
+    background-color:wheat;
+    border-radius:30px;
+}
+.one{
+    grid-area: one;
+    background-image: url(https://i.pinimg.com/1200x/3b/f8/39/3bf83975eed097f956d153dce401ff6a.jpg);
+    background-size:cover;
+    background-position:top;
+    
+}
+.two{
+    grid-area: two;
+    background-image: url(https://i.pinimg.com/1200x/91/65/4a/91654a96f619c0ff5bde6950954a5ea5.jpg);
+    background-size:cover;
+    background-position:top;
+}
+.three{
+    grid-area: three;
+    background-image: url(https://i.pinimg.com/1200x/79/42/81/794281ef7525e9b840b6580b8b313b3d.jpg);
+    background-size:cover;
+    background-position:top;
+}
+.four{
+    grid-area: four;
+    background-image: url(https://i.pinimg.com/1200x/81/fe/13/81fe13bbc3785df8442900220a671334.jpg);
+    background-size:cover;
+    background-position:top;
+}
+.five{
+    grid-area: five;
+    background-image: url(https://i.pinimg.com/1200x/b1/33/18/b13318d189845858d0d78112f4240baa.jpg);
+    background-size:cover;
+    background-position:top;
+}
+.six{
+    grid-area: six;
+    background-image: url(https://i.pinimg.com/1200x/79/61/cc/7961cc36fa1e443b4f63511db7ca1fb3.jpg);
+    background-size:cover;
+    background-position:40% 50%;
+}
+.seven{
+    grid-area: seven;
+    background-image: url(https://i.pinimg.com/1200x/0d/81/86/0d818682f0f311924def5d9a14333cce.jpg);
+    background-size:cover;
+    background-position:50% 90%;
+}
+.eight{
+    grid-area: eight;
+    background-image: url(https://i.pinimg.com/1200x/a5/a1/d9/a5a1d9ef208f25669fe9625cf4f8fa74.jpg);
+    background-size:cover;
+    background-position:top;
+}
