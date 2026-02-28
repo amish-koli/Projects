@@ -72,8 +72,8 @@ section .info-board{
     border:1px solid var(--border-color);
     flex-grow: 1;
     display: grid;
-   grid-template-columns: repeat(auto-fill,minmax(30px,1fr));
-   grid-template-rows: repeat(auto-fill,minmax(30px,1fr));
+    grid-template-columns: repeat(auto-fill,minmax(30px,1fr));
+    grid-template-rows: repeat(auto-fill,minmax(30px,1fr));
     
 }
 .block{
