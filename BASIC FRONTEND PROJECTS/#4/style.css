@@ -1,0 +1,47 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Machina", sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+:root{
+    --primary-color: #e3e3e3;
+    --secondary-color: #2ecc71;
+    --text-color: #000000;
+    --background-color: #262626;
+}
+@font-face {
+    font-family: "Machina";
+    src: url("NeueMachina-Regular_DQCmjH1st.ttf") format("truetype");
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+}
+.container {
+  width: 100px;
+  height: 100px;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Cristiano_Ronaldo_2275_%28cropped%29.jpg/960px-Cristiano_Ronaldo_2275_%28cropped%29.jpg);
+  background-size: cover;
+  background-position: 70% 20%;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+p{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color:rgb(238, 105, 105);
+  display:none;
+}
