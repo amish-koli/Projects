@@ -49,7 +49,8 @@ section.allElems{
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 60px 20px;
-   font-family: "Bold";
+  font-family: "Bold";
+  position: relative;
 }
 .elems{
   position: relative;
@@ -81,4 +82,7 @@ section.fullElems{
   font-size: 4rem;
   display: none;
   background-color: var(--pri);
+  position: absolute;
+  left: 0px;
+  top:0px;
 }
