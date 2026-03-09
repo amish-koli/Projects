@@ -5,9 +5,20 @@
     --tri2:#F0F0DB;
 }
 @font-face {
-    font-family: "light";
-    src: url(./fonts/Hello\ Chunky.otf);
-    font-weight: 200;
+    font-family: "Regular";
+    src: url(./fonts/poppins.regular.ttf);
+}
+@font-face {
+    font-family: "Light";
+    src: url(./fonts/poppins.extralight.ttf);
+}
+@font-face {
+    font-family: "Bold";
+    src: url(./fonts/poppins.bold.ttf);
+}
+@font-face {
+    font-family: "Thin";
+    src: url(./fonts/poppins.thin.ttf);
 }
 *{
   margin: 0;
@@ -19,7 +30,7 @@ html,
 body {
   width: 100%;
   height: 100%;
-  font-family: "light";
+  font-family: "Bold";
   color:var(--tri1);
   background-color: var(--pri);
 }
@@ -33,14 +44,41 @@ section.allElems{
   height: 100%;
   background-color: var(--pri);
   display: flex;
-  gap: 20px;
+  gap: 40px;
   align-items: flex-start;
+  justify-content: space-between;
   flex-wrap: wrap;
+  padding: 60px 20px;
+   font-family: "Bold";
 }
 .elems{
+  position: relative;
   height: 400px;
   width: 300px;
-  padding: 30px 40px;
   border-radius: 20px;
   background-color:rgb(57, 57, 57);
+  overflow: hidden;
+  transition: all ease 3s;
+}
+.elems img{
+  width: 100% ;
+  height: 100%;
+  object-fit: cover;
+}
+.elems>h2{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  mix-blend-mode:difference;
+  font-size: 2.4rem;
+}
+.elems:active{
+  transform: scale(1.7);
+}
+section.fullElems{
+  width: 100%;
+  height: 100%;
+  font-size: 4rem;
+  display: none;
+  background-color: var(--pri);
 }
