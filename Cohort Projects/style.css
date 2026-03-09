@@ -1,0 +1,46 @@
+:root{
+    --pri:#30364F;
+    --sec:#ACBAC4;
+    --tri1:#E1D9BC;
+    --tri2:#F0F0DB;
+}
+@font-face {
+    font-family: "light";
+    src: url(./fonts/Hello\ Chunky.otf);
+    font-weight: 200;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "light";
+  color:var(--tri1);
+  background-color: var(--pri);
+}
+nav{
+    height: 60px;
+    width: 100%;
+    background-color: var(--sec);
+}
+section.allElems{
+  width: 100%;
+  height: 100%;
+  background-color: var(--pri);
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.elems{
+  height: 400px;
+  width: 300px;
+  padding: 30px 40px;
+  border-radius: 20px;
+  background-color:rgb(57, 57, 57);
+}
