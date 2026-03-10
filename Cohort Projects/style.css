@@ -1,8 +1,12 @@
 :root{
-    --pri:#30364F;
-    --sec:#ACBAC4;
-    --tri1:#E1D9BC;
-    --tri2:#F0F0DB;
+    /* --pri:#30364F; */
+    --pri:#EAEFEF;
+    /* --sec:#ACBAC4; */
+    --sec:#BFC9D1;
+    /* --tri1:#E1D9BC; */
+    --tri1:#25343F;
+    /* --tri2:#F0F0DB; */
+    --tri2:#FF9B51;
 }
 @font-face {
     font-family: "Regular";
@@ -31,18 +35,18 @@ body {
   width: 100%;
   height: 100%;
   font-family: "Bold";
-  color:var(--tri1);
-  background-color: var(--pri);
+  color:var(--tri2);
+  background-color: var(--tri1);
 }
 nav{
     height: 60px;
     width: 100%;
-    background-color: var(--sec);
+    background-color: var(--tri1);
 }
 section.allElems{
   width: 100%;
   height: 100%;
-  background-color: var(--pri);
+  background-color: var(--tri1);
   display: flex;
   gap: 40px;
   align-items: flex-start;
@@ -50,7 +54,7 @@ section.allElems{
   flex-wrap: wrap;
   padding: 60px 20px;
   font-family: "Bold";
-  position: relative;
+  /* position: relative; */
 }
 .elems{
   position: relative;
@@ -70,8 +74,11 @@ section.allElems{
   position: absolute;
   bottom: 10px;
   right: 10px;
-  mix-blend-mode:difference;
+  mix-blend-mode:luminosity;
   font-size: 2.4rem;
+  /* -webkit-text-stroke: 1px var(--tri1); */
+  text-shadow: 2px 2px 5px black;
+  
 }
 .elems:active{
   transform: scale(1.7);
@@ -81,7 +88,7 @@ section.fullElems{
   height: 100%;
   font-size: 4rem;
   display: none;
-  background-color: var(--pri);
+  background-color: var(--tri1);
   position: absolute;
   left: 0px;
   top:0px;
