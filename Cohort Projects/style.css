@@ -7,6 +7,7 @@
     --tri1:#25343F;
     /* --tri2:#F0F0DB; */
     --tri2:#FF9B51;
+    --red:rgb(157, 7, 7);
 }
 @font-face {
     font-family: "Regular";
@@ -86,10 +87,39 @@ section.allElems{
 section.fullElems{
   width: 100%;
   height: 100%;
-  font-size: 4rem;
   display: none;
   background-color: var(--tri1);
   position: absolute;
   left: 0px;
   top:0px;
+  color: var(--sec);
+  padding: 40px;
+  font-size: 2rem;
+}
+.back-btn{
+  display: flex;
+  justify-content:space-between;
+  justify-items: stretch;
+  align-items: end;
+  width:100%;
+  height: 100px;
+  background-color:whitesmoke;
+  border-radius: 30px;
+  border:none;
+  padding:0px 40px;
+}
+.fullElems .back-btn .ri-close-circle-fill{
+  color:var(--tri2);
+  transition:all ease 3s;
+  transform-origin: center;
+  color: var(--red); 
+  font-size: 6rem;
+  /* new thin */
+}
+.fullElems .back-btn .ri-close-circle-fill:active{
+  transform: scale(1.6);
+}
+.fullElems .back-btn h1{
+  font-size: 4rem;
+  color:var(--tri2);
 }
