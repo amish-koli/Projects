@@ -96,7 +96,12 @@ section.fullElems{
   padding: 40px;
   font-size: 2rem;
 }
-.back-btn{
+section.fullElems .todolist-container{
+  display: flex;
+  flex-direction: column;
+  gap:40px;
+}
+.fullElems .todolist-container .back-btn{
   display: flex;
   justify-content:space-between;
   justify-items: stretch;
@@ -108,7 +113,7 @@ section.fullElems{
   border:none;
   padding:0px 40px;
 }
-.fullElems .back-btn .ri-close-circle-fill{
+.fullElems .todolist-container .back-btn .ri-close-circle-fill{
   color:var(--tri2);
   transition:all ease 3s;
   transform-origin: center;
@@ -116,10 +121,139 @@ section.fullElems{
   font-size: 6rem;
   /* new thin */
 }
-.fullElems .back-btn .ri-close-circle-fill:active{
+.fullElems .todolist-container .back-btn .ri-close-circle-fill:active{
   transform: scale(1.6);
 }
-.fullElems .back-btn h1{
+.fullElems .todolist-container .back-btn h1{
   font-size: 4rem;
   color:var(--tri2);
+}
+.fullElems .todolist-container .task-app{
+  display: flex;
+  gap:100px
+}
+.fullElems .todolist-container .task-app .task-form {
+    width: 500px;
+    height: 600px;
+    background-color: var(--sec);
+    display: flex;
+    padding: 40px;
+    border-radius: 30px;
+    display: flex;
+   justify-content: center;
+  
+}
+.fullElems .todolist-container .task-app .task-form form{
+   display: flex;
+   flex-direction: column;
+   align-items: start;
+   gap:20px;
+}
+.fullElems .todolist-container .task-app .task-form form #task-input{
+  width: 400px;
+  height: 80px;
+  padding: 10px;
+  font-size: 30px;
+  font-family:"Light";
+  border-radius: 20px;
+  border:0px none ;
+}
+.fullElems .todolist-container .task-app .task-form form .task-checkbox-div{
+  display: flex;
+  justify-content: start;
+  gap:20px
+}
+.fullElems .todolist-container .task-app .task-form form .task-checkbox-div #task-check{
+  width: 40px;
+  height: 40px;
+  cursor:pointer;
+}
+.fullElems .todolist-container .task-app .task-form form .task-checkbox-div label{
+  font-size: 30px;
+  color:#25343F;
+  font-family: "Light";
+}
+.fullElems .todolist-container .task-app .task-form form textarea{
+  width: 400px;
+  height: 550px;
+  padding: 10px;
+  font-size: 30px;
+  font-family:"Light";
+  border-radius: 20px;
+  border:0px none ;
+}
+.fullElems .todolist-container .task-app .task-form form .addTask{
+  padding: 14px 80px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  /* font-family: "Regular";
+   */
+   font-family: "Light";
+
+  background: linear-gradient(135deg,#6a5af9,#836dff);
+  color: white;
+
+  transition: all 0.25s ease;
+
+  box-shadow: 
+  0 4px 10px rgba(0,0,0,0.15),
+  0 2px 4px rgba(0,0,0,0.1);
+
+}
+
+.fullElems .todolist-container .task-app .task-form form .addTask:hover{
+  transform: translateY(-3px);
+  
+  box-shadow:
+  0 12px 20px rgba(0,0,0,0.2),
+  0 6px 8px rgba(0,0,0,0.15);
+}
+
+.fullElems .todolist-container .task-app .task-form form .addTask:active{
+  transform: translateY(0px);
+  box-shadow:
+  0 4px 8px rgba(0,0,0,0.2);
+}
+.fullElems .todolist-container .task-app .task-list{
+    width: 100%;
+    height: 600px;
+    background-color: var(--sec);
+    display: flex;
+    padding: 30px 40px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap:20px;
+    overflow:auto;
+}
+
+.fullElems .todolist-container .task-app .task-list::-webkit-scrollbar{
+  display: none;
+}
+.fullElems .todolist-container .task-app .task-list .task-item{
+    width:98%;
+    height: 80px;
+    border-radius: 20px;
+    background-color: #6a5af9;
+    padding-left:30px;
+    padding-right: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+}
+.fullElems .todolist-container .task-app .task-list .task-item input{
+  width:40px;
+  height:40px;
+  cursor:pointer;
+}
+.fullElems .todolist-container .task-app .task-list .task-item .task-title{
+  font-size: 2.7rem;
+  color:aliceblue;
+  font-family: "Regular";
 }

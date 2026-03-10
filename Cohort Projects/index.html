@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
-  <link rel="stylesheet" href="style.css">
-  <link
-  href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
-  rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
+
 <body>
 
     <main>
@@ -18,54 +18,85 @@
                 <h2>To Do</h2>
             </div>
             <div class="planner elems" id="1">
-                <img src="https://i.pinimg.com/736x/08/e3/dd/08e3dd51965caf94f60f373bd20f72d9.jpg" alt="">          
+                <img src="https://i.pinimg.com/736x/08/e3/dd/08e3dd51965caf94f60f373bd20f72d9.jpg" alt="">
                 <h2>Planner</h2>
             </div>
             <div class="moti elems" id="2">
-                <img src="https://i.pinimg.com/736x/e9/3f/c2/e93fc2e2a04c3579e09da67d97cce241.jpg" alt="">          
+                <img src="https://i.pinimg.com/736x/e9/3f/c2/e93fc2e2a04c3579e09da67d97cce241.jpg" alt="">
                 <h2>Motivation</h2>
             </div>
             <div class="pomo elems" id="3">
-                <img src="https://i.pinimg.com/1200x/b7/54/1c/b7541c7a78fd4fb8a53eabd712f955be.jpg" alt="">          
+                <img src="https://i.pinimg.com/1200x/b7/54/1c/b7541c7a78fd4fb8a53eabd712f955be.jpg" alt="">
                 <h2>Pomodoro</h2>
             </div>
             <div class="goals elems" id="4">
-                <img src="https://i.pinimg.com/736x/c9/50/1a/c9501aa63e9b3d8878aeb095eef7e0ab.jpg" alt="">                          
+                <img src="https://i.pinimg.com/736x/c9/50/1a/c9501aa63e9b3d8878aeb095eef7e0ab.jpg" alt="">
                 <h2>Goals</h2>
             </div>
         </section>
         <section class="fullElems">
-            <div class="back-btn">
-                <h1>Personalized Your Task</h1>
-                <i  id="0" class="ri-close-circle-fill"> </i>
+            <div class="fullElems todolist-container">
+                <div class="back-btn">
+                    <h1>Personalized Your Task</h1>
+                    <i id="0" class="ri-close-circle-fill"> </i>
+                </div>
+                <div class="task-app">
+                    <div class="task-form">
+                        <form action="">
+                            <input type="text" placeholder="Enter task name" id="task-input">
+                            <textarea name="" id="" placeholder="Enter task Details"></textarea>
+                            <div class="task-checkbox-div">
+                                <input type="checkbox" name="" id="task-check">
+                                <label>Marks as Important</label>
+                            </div>
+                            <button class="addTask">Add Task</button>
+                        </form>
+                    </div>
+                    <div class="task-list">
+                        <div class="task-item">
+                            <h3 class="task-title">Task1</h3>
+                            <input type="checkbox" name="" id="task-itemcheck">
+                        </div>
+                        <div class="task-item">
+                            <h3 class="task-title">Task1</h3>
+                            <input type="checkbox" name="" id="task-itemcheck">
+                        </div>
+                        <div class="task-item">
+                            <h3 class="task-title">Task1</h3>
+                            <input type="checkbox" name="" id="task-itemcheck">
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </section>
         <section class="fullElems">
             <div class="back-btn">
                 <h1>To do</h1>
-                <i  id="1" class="ri-close-circle-fill"> </i>
+                <i id="1" class="ri-close-circle-fill"> </i>
             </div>
         </section>
         <section class="fullElems">
             <div class="back-btn">
                 <h1>To do</h1>
-                <i  id="2" class="ri-close-circle-fill"> </i>
+                <i id="2" class="ri-close-circle-fill"> </i>
             </div>
         </section>
         <section class="fullElems">
             <div class="back-btn">
                 <h1>To do</h1>
-                <i  id="3" class="ri-close-circle-fill"> </i>
+                <i id="3" class="ri-close-circle-fill"> </i>
             </div>
         </section>
         <section class="fullElems">
             <div class="back-btn">
                 <h1>To do</h1>
-                <i  id="4" class="ri-close-circle-fill"> </i>
+                <i id="4" class="ri-close-circle-fill"> </i>
             </div>
         </section>
     </main>
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
