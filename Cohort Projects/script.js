@@ -18,3 +18,15 @@ function OpenPages() {
     })
 }
 OpenPages();
+let form=document.querySelector(".task-form form");
+let taskinput=document.querySelector(".task-form form input");
+let textarea=document.querySelector(".task-form form input");
+
+form.addEventListener("submit",function(e){
+    e.preventDefault();
+    console.log(e);
+    console.log(taskinput);
+    
+})
+
+
