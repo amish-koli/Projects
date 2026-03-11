@@ -32,27 +32,37 @@ let taskinput = document.querySelector(".task-form form input")
 let textarea = document.querySelector(".task-form form textarea")
 let markimp = document.querySelector(".task-form form .task-checkbox-div input")
 let tasklist = document.querySelector(".task-list")
+renderTasks();
 
-renderTasks()
 form.addEventListener("submit",function(e){
     e.preventDefault();
-    
-    currenttask.push({
+
+  if(taskinput.value.trim() === ''){
+        alert("Name pls");
+        return;
+    }
+        currenttask.push({
         taskname:taskinput.value,
         taskdetails:textarea.value,
         mark:markimp.checked
-    })
-
+        })
     renderTasks();
+
+        taskinput.value = "";
+        textarea.value = "";
+        markimp.checked = false;
 
     localStorage.setItem("tasks", JSON.stringify(currenttask))
 })
 function renderTasks(){
     let sum=``
-
+    if(currenttask.length === 0){
+        tasklist.innerHTML = "<p class='no-task'>Add a Task Please🥹</p>";
+        return;
+    }
     currenttask.forEach(
         function(elem,idx){    
-        sum=sum+`<div class="task-item" id=${idx}>
+        sum=sum+`<div class="task-item" class="fade" class="fadd" id=${idx}>
         <h3 class="task-title">${elem.taskname}${elem.mark ? `<span class="imp">*</span>` : ``}</h3>
         <input type="checkbox" name="" id="task-itemcheck">
         </div>`
@@ -64,19 +74,24 @@ function renderTasks(){
 tasklist.addEventListener("change", function(e){
 
     if(e.target.type === "checkbox"){
-        console.log(e.target.parentElement.id);
-        
 
-        let taskId = Number(e.target.parentElement.id)
+        let taskElem = e.target.parentElement
+        let taskId = Number(taskElem.id)
 
-        currenttask.splice(taskId,1)
+        taskElem.classList.add("fade")
 
-        renderTasks()
-        taskinput.value = "";
-        textarea.value = "";
-        markimp.checked = false;
-        localStorage.setItem("tasks", JSON.stringify(currenttask))
+        setTimeout(function(){
+
+            currenttask.splice(taskId,1)
+
+            renderTasks()
+
+            localStorage.setItem("tasks", JSON.stringify(currenttask))
+
+        },400)
+
     }
+
 })
 }
 Todo();
