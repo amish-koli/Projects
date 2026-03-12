@@ -38,7 +38,11 @@ body {
   font-family: "Bold";
   color:var(--tri2);
   background-color: var(--tri1);
+
 }
+
+/* Main page css */
+
 nav{
     height: 60px;
     width: 100%;
@@ -96,6 +100,9 @@ section.fullElems{
   padding: 40px;
   font-size: 2rem;
 }
+
+/* To do */
+
 section.fullElems .todolist-container{
   display: flex;
   flex-direction: column;
@@ -272,4 +279,91 @@ section.fullElems .todolist-container{
 .no-task{
   color:var(--red);
   font-family: "Light";
+}
+
+/* Planner Css */
+.fullElems .planner-container .back-btn{
+  display: flex;
+  justify-content:space-between;
+  justify-items: stretch;
+  align-items: end;
+  width:100%;
+  height: 100px;
+  background-color:whitesmoke;
+  border-radius: 30px;
+  border:none;
+  padding:0px 40px;
+}
+.fullElems .planner-container .back-btn .ri-close-circle-fill{
+  color:var(--tri2);
+  transition:all ease 3s;
+  transform-origin: center;
+  color: var(--red); 
+  font-size: 6rem;
+  /* new thin */
+}
+.fullElems .planner-container .back-btn .ri-close-circle-fill:active{
+  transform: scale(1.6);
+}
+.fullElems .planner-container .back-btn h1{
+  font-size: 4rem;
+  color:var(--tri2);
+}
+
+.planner-container h2 {
+    font-size: 70px;
+}
+
+.planner-container .day-planner {
+    background-color: var(--sec);
+    height: 85%;
+    margin-top: 40px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    overflow: auto;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    /* webkitscrollbar-width: none; Firefox */
+    scrollbar-width: none; /* Firefox */
+}
+
+.planner-container .day-planner .day-planner-time {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    width: 49%;
+    margin-bottom: 15px;
+}
+
+.day-planner .day-planner-time p {
+    position: absolute;
+    top: 12%;
+    left: 2%;
+    color: var(--tri1);
+    font-size: 16px;
+}
+
+.day-planner .day-planner-time input {
+    padding: 20px 45px;
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 35px;
+    padding-top: 34px;
+    outline: none;
 }
