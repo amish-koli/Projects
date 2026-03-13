@@ -118,7 +118,6 @@ function dailyPlanner() {
 
 
     var dayPlannerInput = document.querySelectorAll('.day-planner input')
-    
     dayPlannerInput.forEach(function (elem) {
         elem.addEventListener('input', function () {
             console.log('hello');
