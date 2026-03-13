@@ -120,7 +120,7 @@ function dailyPlanner() {
     var dayPlannerInput = document.querySelectorAll('.day-planner input')
     dayPlannerInput.forEach(function (elem) {
         elem.addEventListener('input', function () {
-            console.log('hello');
+            
             dayPlanData[elem.id] = elem.value
 
             localStorage.setItem('dayPlanData', JSON.stringify(dayPlanData))
@@ -128,3 +128,23 @@ function dailyPlanner() {
     })
 }
 dailyPlanner();
+function motivationalQuote() {
+    var motivationQuoteContent = document.querySelector('.fullElems .motivation-container .moti-card .moti-quote h2')
+    var motivationAuthor = document.querySelector('.fullElems .motivation-container .moti-card .moti-author h1')
+    var btn=document.querySelector('.fullElems .motivation-container .moti-card .btn')
+    async function fetchQuote() {
+        let response = await fetch('https://dummyjson.com/quotes')
+        let data = await response.json()
+        let random = data.quotes[Math.floor(Math.random()*data.limit)]
+        btn.addEventListener('click',function(){
+            let ran = data.quotes[Math.floor(Math.random()*data.limit)]
+            motivationQuoteContent.innerHTML = ran.quote
+            motivationAuthor.innerHTML = ran.author
+        })
+        motivationQuoteContent.innerHTML = random.quote
+        motivationAuthor.innerHTML = random.author
+    }
+
+    fetchQuote()
+}
+motivationalQuote();

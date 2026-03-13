@@ -1,14 +1,19 @@
 :root{
-    /* --pri:#30364F; */
     --pri:#EAEFEF;
-    /* --sec:#ACBAC4; */
     --sec:#BFC9D1;
-    /* --tri1:#E1D9BC; */
-    --tri1:#25343F;
-    /* --tri2:#F0F0DB; */
-    --tri2:#FF9B51;
-    --red:rgb(157, 7, 7);
+    --tri1:#FFFBF0;
+    --tri2:#FF3D00;
+    --red:#FF0000;
+    --black:#000000;
+    --yellow:#FFE500;
+    --blue:#0057FF;
+    --green:#00C853;
+    --pink:#FF2D78;
+    --border: 3px solid #000;
+    --shadow: 5px 5px 0px #000;
+    --shadow-lg: 8px 8px 0px #000;
 }
+
 @font-face {
     font-family: "Regular";
     src: url(./fonts/poppins.regular.ttf);
@@ -25,346 +30,610 @@
     font-family: "Thin";
     src: url(./fonts/poppins.thin.ttf);
 }
-*{
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
   width: 100%;
   height: 100%;
   font-family: "Bold";
-  color:var(--tri2);
+  color: var(--black);
   background-color: var(--tri1);
-
+  background-image: 
+    repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(0,0,0,0.08) 39px, rgba(0,0,0,0.08) 40px),
+    repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(0,0,0,0.08) 39px, rgba(0,0,0,0.08) 40px);
 }
 
-/* Main page css */
+/* ===== MAIN PAGE ===== */
 
-nav{
-    height: 60px;
-    width: 100%;
-    background-color: var(--tri1);
-}
-section.allElems{
+section.allElems {
   width: 100%;
-  height: 100%;
-  background-color: var(--tri1);
+  min-height: 100%;
+  background-color: transparent;
   display: flex;
-  gap: 40px;
+  gap: 30px;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
-  padding: 60px 20px;
+  padding: 60px 40px;
   font-family: "Bold";
-  /* position: relative; */
 }
-.elems{
+
+.elems {
   position: relative;
-  height: 400px;
-  width: 300px;
-  border-radius: 20px;
-  background-color:rgb(57, 57, 57);
+  height: 380px;
+  width: 280px;
+  border-radius: 0px;
+  background-color: var(--yellow);
   overflow: hidden;
-  transition: all ease 3s;
+  border: var(--border);
+  box-shadow: var(--shadow-lg);
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
-.elems img{
-  width: 100% ;
+
+.elems:nth-child(2) { background-color: #B8F5C8; }
+.elems:nth-child(3) { background-color: #FFB3DE; }
+.elems:nth-child(4) { background-color: #B3D4FF; }
+.elems:nth-child(5) { background-color: #FFD9B3; }
+
+.elems img {
+  width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: grayscale(30%) contrast(1.1);
+  /* mix-blend-mode: multiply; */
 }
-.elems>h2{
+
+.elems > h2 {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
-  mix-blend-mode:luminosity;
-  font-size: 2.4rem;
-  /* -webkit-text-stroke: 1px var(--tri1); */
-  text-shadow: 2px 2px 5px black;
-  
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: var(--black);
+  color: var(--yellow);
+  font-size: 1.6rem;
+  font-family: "Bold";
+  padding: 10px 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-top: var(--border);
 }
-.elems:active{
-  transform: scale(1.7);
+
+.elems:nth-child(2) > h2 { color: #B8F5C8; }
+.elems:nth-child(3) > h2 { color: #FFB3DE; }
+.elems:nth-child(4) > h2 { color: #B3D4FF; }
+.elems:nth-child(5) > h2 { color: #FFD9B3; }
+
+.elems:hover {
+  transform: translate(-3px,-3px);
+  box-shadow: 11px 11px 0px #000;
 }
-section.fullElems{
+
+.elems:active {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0px #000;
+}
+
+/* ===== FULL PAGE SECTIONS ===== */
+
+section.fullElems {
   width: 100%;
   height: 100%;
   display: none;
   background-color: var(--tri1);
+  background-image: 
+    repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(0,0,0,0.06) 39px, rgba(0,0,0,0.06) 40px),
+    repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(0,0,0,0.06) 39px, rgba(0,0,0,0.06) 40px);
   position: absolute;
   left: 0px;
-  top:0px;
-  color: var(--sec);
+  top: 0px;
+  color: var(--black);
   padding: 40px;
+  font-size: 2rem;
+  overflow-y: auto;
+}
+
+/* ===== BACK BUTTON BAR (shared) ===== */
+
+.back-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 90px;
+  background-color: var(--yellow);
+  border: var(--border);
+  box-shadow: var(--shadow-lg);
+  padding: 0px 30px;
+  margin-bottom: 40px;
+}
+
+.back-btn h1 {
+  font-size: 2.6rem;
+  font-family: "Bold";
+  color: var(--black);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.back-btn .ri-close-circle-fill {
+  color: var(--black);
+  transition: transform 0.1s ease;
+  font-size: 3.5rem;
+  cursor: pointer;
+  background-color: var(--red);
+  border: var(--border);
+  box-shadow: 4px 4px 0px #000;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-btn .ri-close-circle-fill:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #000;
+}
+
+.back-btn .ri-close-circle-fill:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #000;
+}
+
+/* ===== TODO LIST ===== */
+
+section.fullElems .todolist-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.fullElems .todolist-container .back-btn {
+  background-color: var(--yellow);
+  border-radius: 0;
+}
+
+.fullElems .todolist-container .back-btn h1 {
+  font-size: 2.5rem;
+  color: var(--black);
+  font-family: "Bold";
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.fullElems .todolist-container .back-btn .ri-close-circle-fill {
   font-size: 2rem;
 }
 
-/* To do */
+.fullElems .todolist-container .task-app {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
 
-section.fullElems .todolist-container{
+.fullElems .todolist-container .task-app .task-form {
+  width: 460px;
+  background-color: #B3D4FF;
+  display: flex;
+  padding: 30px;
+  border: var(--border);
+  box-shadow: var(--shadow-lg);
+  border-radius: 0;
+  justify-content: center;
+}
+
+.fullElems .todolist-container .task-app .task-form form {
   display: flex;
   flex-direction: column;
-  gap:40px;
+  align-items: start;
+  gap: 16px;
+  width: 100%;
 }
-.fullElems .todolist-container .back-btn{
-  display: flex;
-  justify-content:space-between;
-  justify-items: stretch;
-  align-items: end;
-  width:100%;
-  height: 100px;
-  background-color:whitesmoke;
-  border-radius: 30px;
-  border:none;
-  padding:0px 40px;
+
+.fullElems .todolist-container .task-app .task-form form #task-input {
+  width: 100%;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 22px;
+  font-family: "Regular";
+  border: var(--border);
+  box-shadow: 4px 4px 0px #000;
+  border-radius: 0;
+  outline: none;
+  background-color: white;
+  color: var(--black);
 }
-.fullElems .todolist-container .back-btn .ri-close-circle-fill{
-  color:var(--tri2);
-  transition:all ease 3s;
-  transform-origin: center;
-  color: var(--red); 
-  font-size: 6rem;
-  /* new thin */
+
+.fullElems .todolist-container .task-app .task-form form #task-input:focus {
+  background-color: var(--yellow);
 }
-.fullElems .todolist-container .back-btn .ri-close-circle-fill:active{
-  transform: scale(1.6);
-}
-.fullElems .todolist-container .back-btn h1{
-  font-size: 4rem;
-  color:var(--tri2);
-}
-.fullElems .todolist-container .task-app{
-  display: flex;
-  gap:100px
-}
-.fullElems .todolist-container .task-app .task-form {
-    width: 500px;
-    height: 600px;
-    background-color: var(--sec);
-    display: flex;
-    padding: 40px;
-    border-radius: 30px;
-    display: flex;
-   justify-content: center;
-  
-}
-.fullElems .todolist-container .task-app .task-form form{
-   display: flex;
-   flex-direction: column;
-   align-items: start;
-   gap:20px;
-}
-.fullElems .todolist-container .task-app .task-form form #task-input{
-  width: 400px;
-  height: 80px;
-  padding: 10px;
-  font-size: 30px;
-  font-family:"Light";
-  border-radius: 20px;
-  border:0px none ;
-}
-.fullElems .todolist-container .task-app .task-form form .task-checkbox-div{
+
+.fullElems .todolist-container .task-app .task-form form .task-checkbox-div {
   display: flex;
   justify-content: start;
-  gap:20px
+  align-items: center;
+  gap: 14px;
 }
-.fullElems .todolist-container .task-app .task-form form .task-checkbox-div #task-check{
-  width: 40px;
-  height: 40px;
-  cursor:pointer;
-}
-.fullElems .todolist-container .task-app .task-form form .task-checkbox-div label{
-  font-size: 30px;
-  color:#25343F;
-  font-family: "Light";
-}
-.fullElems .todolist-container .task-app .task-form form textarea{
-  width: 400px;
-  height: 550px;
-  padding: 10px;
-  font-size: 30px;
-  font-family:"Light";
-  border-radius: 20px;
-  border:0px none ;
-}
-.fullElems .todolist-container .task-app .task-form form .addTask{
-  padding: 14px 80px;
-  width: 100%;
-  font-size: 16px;
-  font-weight: 600;
-  border: none;
-  border-radius: 10px;
+
+.fullElems .todolist-container .task-app .task-form form .task-checkbox-div #task-check {
+  width: 36px;
+  height: 36px;
   cursor: pointer;
-  /* font-family: "Regular";
-   */
-   font-family: "Light";
-
-  background: linear-gradient(135deg,#6a5af9,#836dff);
-  color: white;
-
-  transition: all 0.25s ease;
-
-  box-shadow: 
-  0 4px 10px rgba(0,0,0,0.15),
-  0 2px 4px rgba(0,0,0,0.1);
-
+  border: var(--border);
+  accent-color: var(--black);
 }
 
-.fullElems .todolist-container .task-app .task-form form .addTask:hover{
-  transform: translateY(-3px);
-  
-  box-shadow:
-  0 12px 20px rgba(0,0,0,0.2),
-  0 6px 8px rgba(0,0,0,0.15);
+.fullElems .todolist-container .task-app .task-form form .task-checkbox-div label {
+  font-size: 20px;
+  color: var(--black);
+  font-family: "Regular";
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.fullElems .todolist-container .task-app .task-form form .addTask:active{
-  transform: translateY(0px);
-  box-shadow:
-  0 4px 8px rgba(0,0,0,0.2);
-}
-.fullElems .todolist-container .task-app .task-list{
-    width: 100%;
-    height: 600px;
-    background-color: var(--sec);
-    display: flex;
-    padding: 30px 40px;
-    border-radius: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap:20px;
-    overflow:auto;
+.fullElems .todolist-container .task-app .task-form form textarea {
+  width: 100%;
+  height: 260px;
+  padding: 14px;
+  font-size: 18px;
+  font-family: "Light";
+  border: var(--border);
+  box-shadow: 4px 4px 0px #000;
+  border-radius: 0;
+  outline: none;
+  background-color: white;
+  resize: none;
+  color: var(--black);
 }
 
-.fullElems .todolist-container .task-app .task-list::-webkit-scrollbar{
+.fullElems .todolist-container .task-app .task-form form textarea:focus {
+  background-color: #FFFBF0;
+}
+
+.fullElems .todolist-container .task-app .task-form form .addTask {
+  padding: 16px 0;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 900;
+  border: var(--border);
+  border-radius: 0;
+  cursor: pointer;
+  font-family: "Bold";
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background-color: var(--black);
+  color: var(--yellow);
+  box-shadow: var(--shadow);
+  transition: all 0.1s ease;
+}
+
+.fullElems .todolist-container .task-app .task-form form .addTask:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0px #000;
+  background-color: #1a1a1a;
+}
+
+.fullElems .todolist-container .task-app .task-form form .addTask:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0px #000;
+}
+
+.fullElems .todolist-container .task-app .task-list {
+  flex: 1;
+  min-width: 300px;
+  height: 600px;
+  background-color: #FFE500;
+  display: flex;
+  padding: 24px;
+  border: var(--border);
+  box-shadow: var(--shadow-lg);
+  border-radius: 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 14px;
+  overflow: auto;
+}
+
+.fullElems .todolist-container .task-app .task-list::-webkit-scrollbar {
   display: none;
 }
-.fullElems .todolist-container .task-app .task-list .task-item{
-    width:98%;
-    height: 80px;
-    border-radius: 20px;
-    background-color: #6a5af9;
-    padding-left:30px;
-    padding-right: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-decoration: none;
-}
-.fullElems .todolist-container .task-app .task-list .task-item input{
-  width:40px;
-  height:40px;
-  cursor:pointer;
-}
-.fullElems .todolist-container .task-app .task-list .task-item .task-title{
-  font-size: 2.7rem;
-  color:aliceblue;
-  font-family: "Regular";
-}
-.task-item{
-  transition: 
-  opacity 0.35s cubic-bezier(0.22,1,0.36,1),
-  transform 0.35s cubic-bezier(0.22,1,0.36,1),
-  margin 0.35s cubic-bezier(0.22,1,0.36,1);
-}
 
-.task-item.fade{
-  opacity:0;
-  transform: translateY(-20px);
-  margin-bottom:-80px;
-}
-.no-task{
-  color:var(--red);
-  font-family: "Light";
-}
-
-/* Planner Css */
-.fullElems .planner-container .back-btn{
+.fullElems .todolist-container .task-app .task-list .task-item {
+  width: 100%;
+  min-height: 70px;
+  border: var(--border);
+  box-shadow: 4px 4px 0px #000;
+  background-color: white;
+  padding: 10px 20px;
   display: flex;
-  justify-content:space-between;
-  justify-items: stretch;
-  align-items: end;
-  width:100%;
-  height: 100px;
-  background-color:whitesmoke;
-  border-radius: 30px;
-  border:none;
-  padding:0px 40px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0;
 }
-.fullElems .planner-container .back-btn .ri-close-circle-fill{
-  color:var(--tri2);
-  transition:all ease 3s;
-  transform-origin: center;
-  color: var(--red); 
-  font-size: 6rem;
-  /* new thin */
+
+.fullElems .todolist-container .task-app .task-list .task-item:nth-child(odd) {
+  background-color: #FFB3DE;
 }
-.fullElems .planner-container .back-btn .ri-close-circle-fill:active{
-  transform: scale(1.6);
+.fullElems .todolist-container .task-app .task-list .task-item:nth-child(even) {
+  background-color: #B8F5C8;
 }
-.fullElems .planner-container .back-btn h1{
-  font-size: 4rem;
-  color:var(--tri2);
+
+.fullElems .todolist-container .task-app .task-list .task-item input {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  flex-shrink: 0;
+  accent-color: var(--black);
+  border: var(--border);
+}
+
+.fullElems .todolist-container .task-app .task-list .task-item .task-title {
+  font-size: 1.6rem;
+  color: var(--black);
+  font-family: "Regular";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.task-item {
+  transition: 
+    opacity 0.35s cubic-bezier(0.22,1,0.36,1),
+    transform 0.35s cubic-bezier(0.22,1,0.36,1),
+    margin 0.35s cubic-bezier(0.22,1,0.36,1);
+}
+
+.task-item.fade {
+  opacity: 0;
+  transform: translateX(40px);
+  margin-bottom: -70px;
+}
+
+.no-task {
+  color: var(--red);
+  font-family: "Bold";
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 20px 0;
+  border: var(--border);
+  background-color: white;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.imp {
+  color: var(--red);
+  font-size: 2rem;
+  margin-left: 6px;
+}
+
+/* ===== PLANNER ===== */
+
+.fullElems .planner-container .back-btn {
+  background-color: #B8F5C8;
+  border-radius: 0;
+}
+
+.fullElems .planner-container .back-btn h1 {
+  font-size: 2.5rem;
+  color: var(--black);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.fullElems .planner-container .back-btn .ri-close-circle-fill {
+  font-size: 2rem;
 }
 
 .planner-container h2 {
-    font-size: 70px;
+  font-size: 3rem;
+  text-transform: uppercase;
 }
 
 .planner-container .day-planner {
-    background-color: var(--sec);
-    height: 85%;
-    margin-top: 40px;
-    width: 100%;
-    border-radius: 10px;
-    padding: 30px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    overflow: auto;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    /* webkitscrollbar-width: none; Firefox */
-    scrollbar-width: none; /* Firefox */
+  background-color: transparent;
+  height: 80%;
+  margin-top: 0;
+  width: 100%;
+  border-radius: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  overflow: auto;
+  justify-content: space-between;
+  gap: 14px;
+  scrollbar-width: none;
 }
 
 .planner-container .day-planner .day-planner-time {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    position: relative;
-    width: 49%;
-    margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 49%;
+  margin-bottom: 0;
 }
 
 .day-planner .day-planner-time p {
-    position: absolute;
-    top: 12%;
-    left: 2%;
-    color: var(--tri1);
-    font-size: 16px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 12px;
+  color: var(--black);
+  font-size: 13px;
+  font-family: "Bold";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: var(--yellow);
+  padding: 2px 8px;
+  border: 2px solid #000;
+  z-index: 2;
+  white-space: nowrap;
 }
 
 .day-planner .day-planner-time input {
-    padding: 20px 45px;
-    width: 100%;
-    background-color: white;
-    border-radius: 5px;
-    border: none;
-    font-size: 35px;
-    padding-top: 34px;
-    outline: none;
-    font-family: "Thin";
+  padding: 20px 20px 10px 150px;
+  width: 100%;
+  background-color: white;
+  border: var(--border);
+  box-shadow: 4px 4px 0px #000;
+  border-radius: 0;
+  font-size: 24px;
+  outline: none;
+  font-family: "Light";
+  color: var(--black);
+  transition: background-color 0.15s;
+}
+
+.day-planner .day-planner-time input:focus {
+  background-color: #FFE500;
+}
+
+/* ===== MOTIVATION ===== */
+
+.fullElems .motivation-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 60px;
+}
+
+.fullElems .motivation-container .back-btn {
+  background-color: #FFB3DE;
+  border-radius: 0;
+}
+
+.fullElems .motivation-container .back-btn h1 {
+  font-size: 2.5rem;
+  color: var(--black);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.fullElems .motivation-container .back-btn .ri-close-circle-fill {
+  font-size: 2rem;
+}
+
+.fullElems .motivation-container .moti-card {
+  width: min(800px, 100%);
+  min-height: 460px;
+  background-color: var(--black);
+  padding: 36px;
+  border: var(--border);
+  box-shadow: 12px 12px 0px var(--yellow);
+  position: relative;
+  
+}
+
+.fullElems .motivation-container .moti-card::before {
+  content: "★ DAILY QUOTE ★";
+  position: absolute;
+  top: -18px;
+  left: 24px;
+  background-color: var(--yellow);
+  color: var(--black);
+  font-size: 14px;
+  font-family: "Bold";
+  letter-spacing: 3px;
+  padding: 4px 14px;
+  border: var(--border);
+}
+
+.fullElems .motivation-container .moti-card .moti-1 {
+  font-size: 22px;
+  color: white;
+  font-family: "Regular";
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.fullElems .motivation-container .moti-card .moti-1 h1 {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--yellow);
+}
+
+.fullElems .motivation-container .moti-card .btn {
+  padding: 12px 28px;
+  font-size: 16px;
+  border: var(--border);
+  background: var(--yellow);
+  cursor: pointer;
+  font-family: "Bold";
+  box-shadow: 4px 4px 0px var(--yellow);
+  transition: all 0.1s ease;
+  color: var(--black);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 0;
+  right:60px;
+  position:absolute;
+}
+
+.fullElems .motivation-container .moti-card .btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--yellow);
+  background: white;
+}
+
+.fullElems .motivation-container .moti-card .btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px 0px var(--yellow);
+}
+
+.fullElems .motivation-container .moti-card .moti-quote {
+  font-size: 22px;
+  color: var(--yellow);
+  font-family: "Light";
+  margin-top: 60px;
+  margin-left: 0;
+  line-height: 1.6;
+  border-left: 6px solid var(--yellow);
+  padding-left: 20px;
+}
+
+.fullElems .motivation-container .moti-card .moti-author {
+  font-size: 18px;
+  color: #aaa;
+  font-family: "Bold";
+  margin-top: 40px;
+  margin-left: 0;
+  text-align: right;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.fullElems .motivation-container .moti-card .moti-author::before {
+  content: "— ";
+}
+/* === POMODORO CONTAINER === */
+.fullElems .pomo-container .back-btn {
+  background-color: #B8F5C8;
+  border-radius: 0;
+}
+
+.fullElems .pomo-container .back-btn h1 {
+  font-size: 2.5rem;
+  color: var(--black);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.fullElems .pomo-container .back-btn .ri-close-circle-fill {
+  font-size: 2rem;
+}
+
+.pomo-container h2 {
+  font-size: 3rem;
+  text-transform: uppercase;
 }
