@@ -1,108 +1,206 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-
+  <body>
     <main>
-        <section class="allElems">
-            <div class="todo elems" id="0">
-                <img src="https://i.pinimg.com/736x/e4/9a/3f/e49a3f0b6b18afd25d7de5818c0fb39e.jpg" alt="">
-                <h2>To Do</h2>
-            </div>
-            <div class="planner elems" id="1">
-                <img src="https://i.pinimg.com/736x/08/e3/dd/08e3dd51965caf94f60f373bd20f72d9.jpg" alt="">
-                <h2>Planner</h2>
-            </div>
-            <div class="moti elems" id="2">
-                <img src="https://i.pinimg.com/736x/e9/3f/c2/e93fc2e2a04c3579e09da67d97cce241.jpg" alt="">
-                <h2>Motivation</h2>
-            </div>
-            <div class="pomo elems" id="3">
-                <img src="https://i.pinimg.com/1200x/b7/54/1c/b7541c7a78fd4fb8a53eabd712f955be.jpg" alt="">
-                <h2>Pomodoro</h2>
-            </div>
-            <div class="goals elems" id="4">
-                <img src="https://i.pinimg.com/736x/c9/50/1a/c9501aa63e9b3d8878aeb095eef7e0ab.jpg" alt="">
-                <h2>Goals</h2>
-            </div>
-        </section>
-        <section class="fullElems">
-            <div class="todolist-container">
-                <div class="back-btn">
-                    <h1>Personalized Your Task</h1>
-                    <i id="0" class="ri-close-circle-fill"> </i>
+      <section class="allElems">
+        <div class="todo elems" id="0">
+          <img
+            src="https://i.pinimg.com/736x/e4/9a/3f/e49a3f0b6b18afd25d7de5818c0fb39e.jpg"
+            alt=""
+          />
+          <h2>To Do</h2>
+        </div>
+        <div class="planner elems" id="1">
+          <img
+            src="https://i.pinimg.com/736x/08/e3/dd/08e3dd51965caf94f60f373bd20f72d9.jpg"
+            alt=""
+          />
+          <h2>Planner</h2>
+        </div>
+        <div class="moti elems" id="2">
+          <img
+            src="https://i.pinimg.com/736x/e9/3f/c2/e93fc2e2a04c3579e09da67d97cce241.jpg"
+            alt=""
+          />
+          <h2>Motivation</h2>
+        </div>
+        <div class="pomo elems" id="3">
+          <img
+            src="https://i.pinimg.com/1200x/b7/54/1c/b7541c7a78fd4fb8a53eabd712f955be.jpg"
+            alt=""
+          />
+          <h2>Pomodoro</h2>
+        </div>
+        <div class="goals elems" id="4">
+          <img
+            src="https://i.pinimg.com/736x/c9/50/1a/c9501aa63e9b3d8878aeb095eef7e0ab.jpg"
+            alt=""
+          />
+          <h2>Goals</h2>
+        </div>
+      </section>
+      <section class="fullElems">
+        <div class="todolist-container">
+          <div class="back-btn">
+            <h1>Personalized Your Task</h1>
+            <i id="0" class="ri-close-circle-fill"> </i>
+          </div>
+          <div class="task-app">
+            <div class="task-form">
+              <form action="">
+                <input
+                  type="text"
+                  placeholder="Enter task name"
+                  id="task-input"
+                />
+                <textarea
+                  name=""
+                  id=""
+                  placeholder="Enter task Details"
+                ></textarea>
+                <div class="task-checkbox-div">
+                  <input type="checkbox" name="" id="task-check" />
+                  <label>Marks as Important</label>
                 </div>
-                <div class="task-app">
-                    <div class="task-form">
-                        <form action="">
-                            <input type="text" placeholder="Enter task name" id="task-input">
-                            <textarea name="" id="" placeholder="Enter task Details"></textarea>
-                            <div class="task-checkbox-div">
-                                <input type="checkbox" name="" id="task-check">
-                                <label>Marks as Important</label>
-                            </div>
-                            <button class="addTask">Add Task</button>
-                        </form>
-                    </div>
-                    <div class="task-list">
-                    </div>
-                </div>
+                <button class="addTask">Add Task</button>
+              </form>
             </div>
-        </section>
-        <section class="fullElems">
-            <div class="planner-container">
-                <div class="back-btn">
-                    <h1>Planner</h1>
-                    <i id="1" class="ri-close-circle-fill"></i>
-                </div>
-                <div class="day-planner">
-                </div>
+            <div class="task-list"></div>
+          </div>
+        </div>
+      </section>
+      <section class="fullElems">
+        <div class="planner-container">
+          <div class="back-btn">
+            <h1>Planner</h1>
+            <i id="1" class="ri-close-circle-fill"></i>
+          </div>
+          <div class="day-planner"></div>
+        </div>
+      </section>
+      <section class="fullElems">
+        <div class="motivation-container">
+          <div class="back-btn">
+            <h1>Motivation</h1>
+            <i id="2" class="ri-close-circle-fill"></i>
+          </div>
+          <div class="moti-card">
+            <div class="moti-1">
+              <button class="btn">Change</button>
             </div>
-        </section>
-        <section class="fullElems">
-            <div class="motivation-container">
-                <div class="back-btn">
-                    <h1>Motivation</h1>
-                    <i id="2" class="ri-close-circle-fill"></i>
-                </div>
-                <div class="moti-card">
-                    <div class="moti-1">
-                        <button class="btn">Change</button>
-                    </div>
-                    <div class="moti-quote">
-                        <h2></h2>
-                    </div>
-                    <div class="moti-author">
-                        <h1></h1>
-                    </div>
-                </div>
+            <div class="moti-quote">
+              <h2></h2>
             </div>
-        </section>
-        <section class="fullElems">
-            <div class="pomo-container">
-                <div class="back-btn">
-                    <h1>Pomodoro Timer</h1>
-                    <i id="3" class="ri-close-circle-fill"></i>
+            <div class="moti-author">
+              <h1></h1>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="fullElems">
+        <div class="pomo-container">
+          <div class="back-btn">
+            <h1>Pomodoro Timer</h1>
+            <i id="3" class="ri-close-circle-fill"></i>
+          </div>
+          <div class="pomo-box">
+            <div class="pomo-header">Working session</div>
+            <div class="pomo-timer">
+              <h1>25:00</h1>
+            </div>
+            <div class="pomo-btn">
+              <button class="btn-start">Start</button>
+              <button class="btn-pause">Pause</button>
+              <button class="btn-reset">Reset</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="fullElems">
+        <div class="goals-container">
+          <div class="back-btn">
+            <h1>Goals</h1>
+            <i id="4" class="ri-close-circle-fill"></i>
+          </div>
+
+          <div class="goals-body">
+            <!-- LEFT: ADD GOAL FORM -->
+            <div class="goals-form-panel">
+              <div class="goals-form-label">★ NEW GOAL</div>
+
+              <input
+                type="text"
+                id="goal-title-input"
+                placeholder="Goal title..."
+              />
+
+              <textarea
+                id="goal-desc-input"
+                placeholder="Describe your goal..."
+              ></textarea>
+
+              <div class="goals-category-row">
+                <span class="goal-cat-tag active" data-cat="health"
+                  >Health</span
+                >
+                <span class="goal-cat-tag" data-cat="career">Career</span>
+                <span class="goal-cat-tag" data-cat="finance">Finance</span>
+                <span class="goal-cat-tag" data-cat="personal">Personal</span>
+                <span class="goal-cat-tag" data-cat="learning">Learning</span>
+              </div>
+
+              <div class="goals-date-prio-row">
+                <div class="goals-field-group">
+                  <label>Target Date</label>
+                  <input type="date" id="goal-date-input" />
                 </div>
+                <div class="goals-field-group">
+                  <label>Priority</label>
+                  <div class="goals-prio-row">
+                    <button class="prio-btn active" data-prio="high">
+                      High
+                    </button>
+                    <button class="prio-btn" data-prio="medium">Mid</button>
+                    <button class="prio-btn" data-prio="low">Low</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="goals-why-box">
+                <div class="goals-why-label">WHY DOES THIS MATTER?</div>
+                <textarea
+                  id="goal-why-input"
+                  placeholder="Your reason to keep going..."
+                ></textarea>
+              </div>
+
+              <button class="goals-add-btn" id="goals-add-btn">
+                + Add Goal
+              </button>
             </div>
-        </section>
-        <section class="fullElems">
-            <div class="back-btn">
-                <h1>Goals</h1>
-                <i id="4" class="ri-close-circle-fill"></i>
+
+            <!-- RIGHT: GOALS LIST -->
+            <div class="goals-list-panel">
+              <div class="goals-list-label">★ MY GOALS</div>
+              <div class="goals-list" id="goals-list">
+                <p class="goals-empty">No goals yet. Add one! 🎯</p>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
     </main>
     <script src="script.js"></script>
-
-</body>
-
+  </body>
 </html>

@@ -12,6 +12,10 @@
     --border: 3px solid #000;
     --shadow: 5px 5px 0px #000;
     --shadow-lg: 8px 8px 0px #000;
+    --lightgreen:#B8F5C8;
+    --lightpink:#FFB3DE;
+    --lightblue:#B3D4FF;
+    --lightorange:#FFD9B3;
 }
 
 @font-face {
@@ -187,7 +191,6 @@ section.fullElems {
 }
 
 /* ===== TODO LIST ===== */
-
 section.fullElems .todolist-container {
   display: flex;
   flex-direction: column;
@@ -307,8 +310,8 @@ section.fullElems .todolist-container {
   font-family: "Bold";
   text-transform: uppercase;
   letter-spacing: 3px;
-  background-color: var(--black);
-  color: var(--yellow);
+  background-color: white;
+  color: var(--black);
   box-shadow: var(--shadow);
   transition: all 0.1s ease;
 }
@@ -316,7 +319,7 @@ section.fullElems .todolist-container {
 .fullElems .todolist-container .task-app .task-form form .addTask:hover {
   transform: translate(-2px, -2px);
   box-shadow: 7px 7px 0px #000;
-  background-color: #1a1a1a;
+  /* background-color: #1a1a1a; */
 }
 
 .fullElems .todolist-container .task-app .task-form form .addTask:active {
@@ -412,6 +415,54 @@ section.fullElems .todolist-container {
   font-size: 2rem;
   margin-left: 6px;
 }
+/* extra work */
+.fullElems .todolist-container .task-app .task-list .task-item .task-actions{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.fullElems .todolist-container .task-app .task-list .task-item .detail-toggle{
+    background: none;
+    display:none;
+    border: none;
+    cursor: pointer;
+    color: aliceblue;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+}
+.fullElems .todolist-container .task-app .task-list .task-item .detail-toggle:hover{
+    background: rgba(255,255,255,0.15);
+}
+.fullElems .todolist-container .task-app .task-list .task-item .detail-toggle i{
+    transition: transform 0.3s ease;
+}
+
+
+.fullElems .todolist-container .task-app .task-list .task-item .task-details{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    padding: 0;
+}
+.fullElems .todolist-container .task-app .task-list .task-item .task-details.open{
+    max-height: 300px;
+    padding-bottom: 20px;
+}
+.fullElems .todolist-container .task-app .task-list .task-item .task-details p{
+    font-family: "Light";
+    font-size: 1.4rem;
+    color: rgba(240, 248, 255, 0.85);
+    line-height: 1.6;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 14px;
+}
+
+
 
 /* ===== PLANNER ===== */
 
@@ -617,6 +668,13 @@ section.fullElems .todolist-container {
   content: "— ";
 }
 /* === POMODORO CONTAINER === */
+.fullElems .pomo-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 60px;
+}
 .fullElems .pomo-container .back-btn {
   background-color: #B8F5C8;
   border-radius: 0;
@@ -636,4 +694,548 @@ section.fullElems .todolist-container {
 .pomo-container h2 {
   font-size: 3rem;
   text-transform: uppercase;
+}
+.fullElems .pomo-container .pomo-box{
+  width: 800px;
+  min-height: 500px;
+  background-color: var(--yellow);
+  border: var(--border);
+  box-shadow: 10px 10px 0 black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.fullElems .pomo-container .pomo-box .pomo-header{
+  width: 250px;
+  min-height:70px;
+  font-size: 22px;
+  color:white;
+  background-color: var(--red);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+.fullElems .pomo-container .pomo-box .pomo-timer{
+  width:400px;
+  min-height: 100px;
+  background-color: var(--blue);
+  border: var(--border);
+  box-shadow: var(--shadow-lg);
+  color: white;
+  text-align: center;
+  font-size:3rem;
+}
+.fullElems .pomo-container .pomo-box .pomo-btn {
+  display: flex;
+  justify-content: center;
+  gap:10px;
+}
+.fullElems .pomo-container .pomo-box .pomo-btn .btn-start,.fullElems .pomo-container .pomo-box .pomo-btn .btn-pause,.fullElems .pomo-container .pomo-box .pomo-btn .btn-reset{
+  padding: 12px 28px;
+  font-size: 30px;
+  border: var(--border);
+  background: white;
+  cursor: pointer;
+  font-family: "Bold";
+  box-shadow: 6px 6px 0px var(--black);
+  transition: all 0.1s ease;
+  color: var(--black);
+}
+.fullElems .pomo-container .pomo-box .pomo-btn .btn-start:hover,.fullElems .pomo-container .pomo-box .pomo-btn .btn-pause:hover,.fullElems .pomo-container .pomo-box .pomo-btn .btn-reset:hover{
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--black);
+}
+.fullElems .pomo-container .pomo-box .pomo-btn .btn-start:hover{
+  background: var(--lightorange);
+}
+.fullElems .pomo-container .pomo-box .pomo-btn .btn-pause:hover{
+  background: var(--lightpink);
+}
+.fullElems .pomo-container .pomo-box .pomo-btn .btn-reset:hover{
+  background: var(--red);
+}
+.fullElems .pomo-container .pomo-box .pomo-btn .btn-start:active,.fullElems .pomo-container .pomo-box .pomo-btn .btn-pause:active,.fullElems .pomo-container .pomo-box .pomo-btn .btn-reset:active{
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px var(--black);
+}
+/* ===GOALS=== */
+.fullElems .goals-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 60px;
+}
+.fullElems .goals-container .back-btn {
+  background-color:#FFD9B3 ;
+  border-radius: 0;
+}
+
+.fullElems .goals-container .back-btn h1 {
+  font-size: 2.5rem;
+  color: var(--black);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.fullElems .goals-container .back-btn .ri-close-circle-fill {
+  font-size: 2rem;
+}
+
+.goals-container h2 {
+  font-size: 3rem;
+  text-transform: uppercase;
+} 
+
+/* ── body layout ── */
+.goals-container .goals-body {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* ── LEFT PANEL ── */
+.goals-container .goals-form-panel {
+  width: 420px;
+  background-color: #FFD9B3;
+  border: var(--border);
+  box-shadow: var(--shadow-lg);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+
+.goals-container .goals-form-label {
+  font-size: 13px;
+  font-family: "Bold";
+  letter-spacing: 3px;
+  color: var(--black);
+  background-color: var(--black);
+  color: #FFD9B3;
+  padding: 5px 14px;
+  position: absolute;
+  top: -18px;
+  left: 20px;
+  border: var(--border);
+}
+
+.goals-container .goals-form-panel input[type="text"],
+.goals-container .goals-form-panel input[type="date"],
+.goals-container .goals-form-panel textarea {
+  width: 100%;
+  font-family: "Regular";
+  font-size: 18px;
+  color: var(--black);
+  background-color: white;
+  border: var(--border);
+  box-shadow: 4px 4px 0px #000;
+  outline: none;
+  border-radius: 0;
+  padding: 12px 16px;
+  transition: background-color 0.15s;
+}
+
+.goals-container .goals-form-panel input[type="text"]:focus,
+.goals-container .goals-form-panel input[type="date"]:focus {
+  background-color: var(--yellow);
+}
+
+.goals-container .goals-form-panel textarea {
+  resize: none;
+  height: 100px;
+}
+
+.goals-container .goals-form-panel textarea:focus {
+  background-color: #FFFBF0;
+}
+
+/* Category tags */
+.goals-container .goals-category-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.goals-container .goal-cat-tag {
+  padding: 6px 14px;
+  font-size: 13px;
+  font-family: "Bold";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: var(--border);
+  background-color: white;
+  cursor: pointer;
+  box-shadow: 3px 3px 0px #000;
+  transition: all 0.1s ease;
+}
+
+.goals-container .goal-cat-tag:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0px #000;
+}
+
+.goals-container .goal-cat-tag:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px #000;
+}
+
+.goals-container .goal-cat-tag.active {
+  background-color: var(--black);
+  color: #FFD9B3;
+}
+
+/* Date + Priority row */
+.goals-container .goals-date-prio-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.goals-container .goals-field-group {
+  flex: 1;
+  min-width: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.goals-container .goals-field-group label {
+  font-size: 13px;
+  font-family: "Bold";
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--black);
+}
+
+.goals-container .goals-prio-row {
+  display: flex;
+  gap: 8px;
+}
+
+.goals-container .prio-btn {
+  flex: 1;
+  padding: 10px 0;
+  font-size: 14px;
+  font-family: "Bold";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: var(--border);
+  background-color: white;
+  cursor: pointer;
+  box-shadow: 3px 3px 0px #000;
+  transition: all 0.1s ease;
+  border-radius: 0;
+  color: var(--black);
+}
+
+.goals-container .prio-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0px #000;
+}
+
+.goals-container .prio-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px #000;
+}
+
+.goals-container .prio-btn[data-prio="high"].active  { background-color: #FF3D00; color: white; }
+.goals-container .prio-btn[data-prio="medium"].active { background-color: var(--yellow); color: var(--black); }
+.goals-container .prio-btn[data-prio="low"].active    { background-color: var(--lightgreen); color: var(--black); }
+
+/* Why box */
+.goals-container .goals-why-box {
+  background-color: var(--black);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.goals-container .goals-why-label {
+  font-size: 12px;
+  font-family: "Bold";
+  letter-spacing: 3px;
+  color: #FFD9B3;
+}
+
+.goals-container .goals-why-box textarea {
+  background-color: rgba(255,255,255,0.08) !important;
+  border: 1.5px solid rgba(255,255,255,0.3) !important;
+  box-shadow: none !important;
+  color: white !important;
+  font-size: 16px;
+  height: 80px;
+}
+
+.goals-container .goals-why-box textarea::placeholder {
+  color: rgba(255,255,255,0.4);
+}
+
+.goals-container .goals-why-box textarea:focus {
+  background-color: rgba(255,255,255,0.14) !important;
+}
+
+/* Add button */
+.goals-container .goals-add-btn {
+  width: 100%;
+  padding: 16px 0;
+  font-size: 18px;
+  font-family: "Bold";
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border: var(--border);
+  background-color: white;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: all 0.1s ease;
+  color: var(--black);
+  border-radius: 0;
+  margin-top: 4px;
+}
+
+.goals-container .goals-add-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0px #000;
+  background-color: var(--lightgreen);
+}
+
+.goals-container .goals-add-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0px #000;
+}
+
+/* ── RIGHT PANEL ── */
+.goals-container .goals-list-panel {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+}
+
+.goals-container .goals-list-label {
+  font-size: 13px;
+  font-family: "Bold";
+  letter-spacing: 3px;
+  background-color: var(--black);
+  color: #FFD9B3;
+  padding: 5px 14px;
+  border: var(--border);
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.goals-container .goals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Empty state */
+.goals-container .goals-empty {
+  font-size: 1.4rem;
+  font-family: "Bold";
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--black);
+  background-color: white;
+  border: var(--border);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  text-align: center;
+}
+
+/* ── GOAL CARD ── */
+.goals-container .goal-card {
+  background-color: white;
+  border: var(--border);
+  box-shadow: var(--shadow-lg);
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: goalSlideIn 0.25s cubic-bezier(0.22,1,0.36,1);
+}
+
+@keyframes goalSlideIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.goals-container .goal-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.goals-container .goal-card-title {
+  font-size: 1.5rem;
+  font-family: "Bold";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--black);
+  flex: 1;
+}
+
+.goals-container .goal-card-badges {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.goals-container .goal-badge {
+  font-size: 11px;
+  font-family: "Bold";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border: 2px solid var(--black);
+}
+
+.goals-container .goal-badge.cat-health   { background-color: var(--lightgreen); }
+.goals-container .goal-badge.cat-career   { background-color: var(--lightblue); }
+.goals-container .goal-badge.cat-finance  { background-color: var(--yellow); }
+.goals-container .goal-badge.cat-personal { background-color: var(--lightpink); }
+.goals-container .goal-badge.cat-learning { background-color: #e0d4ff; }
+
+.goals-container .goal-badge.prio-high   { background-color: #FF3D00; color: white; }
+.goals-container .goal-badge.prio-medium { background-color: var(--yellow); }
+.goals-container .goal-badge.prio-low    { background-color: var(--lightgreen); }
+
+.goals-container .goal-card-desc {
+  font-size: 14px;
+  font-family: "Light";
+  color: #333;
+  line-height: 1.6;
+  border-left: 4px solid var(--black);
+  padding-left: 12px;
+}
+
+.goals-container .goal-card-why {
+  font-size: 13px;
+  font-family: "Regular";
+  color: white;
+  background-color: var(--black);
+  padding: 10px 14px;
+  line-height: 1.5;
+}
+
+.goals-container .goal-card-why::before {
+  content: "WHY: ";
+  font-family: "Bold";
+  color: #FFD9B3;
+  letter-spacing: 2px;
+}
+
+/* Progress bar */
+.goals-container .goal-progress-area {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.goals-container .goal-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.goals-container .goal-progress-label {
+  font-size: 12px;
+  font-family: "Bold";
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--black);
+}
+
+.goals-container .goal-progress-value {
+  font-size: 14px;
+  font-family: "Bold";
+  color: var(--black);
+}
+
+.goals-container .goal-progress-track {
+  width: 100%;
+  height: 14px;
+  background-color: #eee;
+  border: 2px solid var(--black);
+}
+
+.goals-container .goal-progress-fill {
+  height: 100%;
+  background-color: var(--black);
+  transition: width 0.3s ease;
+}
+
+.goals-container .goal-progress-input {
+  width: 100%;
+  accent-color: var(--black);
+  cursor: pointer;
+  height: 6px;
+}
+
+/* Bottom row: date + delete */
+.goals-container .goal-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid var(--black);
+  padding-top: 10px;
+}
+
+.goals-container .goal-card-date {
+  font-size: 13px;
+  font-family: "Bold";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #555;
+}
+
+.goals-container .goal-card-date span {
+  color: var(--black);
+}
+
+.goals-container .goal-delete-btn {
+  background-color: white;
+  border: var(--border);
+  box-shadow: 3px 3px 0px #000;
+  padding: 6px 16px;
+  font-size: 14px;
+  font-family: "Bold";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  color: var(--black);
+  transition: all 0.1s ease;
+  border-radius: 0;
+}
+
+.goals-container .goal-delete-btn:hover {
+  background-color: var(--red);
+  color: white;
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0px #000;
+}
+
+.goals-container .goal-delete-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px #000;
+}
+
+/* Fade out on delete */
+.goal-card.fade-out {
+  opacity: 0;
+  transform: translateX(40px);
+  margin-bottom: -100px;
+  transition: opacity 0.3s ease, transform 0.3s ease, margin 0.3s ease;
 }
