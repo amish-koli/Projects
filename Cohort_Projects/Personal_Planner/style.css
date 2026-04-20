@@ -133,7 +133,7 @@ section.allElems header {
   border-bottom: var(--border);
   margin-top: 10px;
   padding: 40px;
-  color: var(--black);
+  color: var(--pri);
 }
 
 /* LEFT — date & time */
@@ -152,7 +152,7 @@ section.allElems header .header1 {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-
+  text-shadow: #000 4px 4px 4px;
 }
 
 section.allElems header .header1::before {
@@ -167,6 +167,7 @@ section.allElems header .header1::before {
   letter-spacing: 4px;
   padding: 3px 12px;
   border: var(--border);
+  text-shadow: none;
 }
 
 section.allElems header .header1 h2 {
@@ -215,7 +216,7 @@ section.allElems header .header2::before {
   top: -14px;
   left: 30px;
   background-color: var(--black);
-  color: var(--lightblue);
+  color: var(--pri);
   font-size: 11px;
   font-family: "Bold";
   letter-spacing: 4px;
@@ -1501,11 +1502,7 @@ section.fullElems .todolist-container {
   section.fullElems {
     padding: 30px 24px;
   }
-
   /* TODO — task form width shrinks gracefully */
-  .fullElems .todolist-container .back-btn h1 {
-    font-size: 1.5rem;
-  }
   .fullElems .todolist-container .task-app .task-form {
     width: 380px;
   }
@@ -1527,6 +1524,25 @@ section.fullElems .todolist-container {
     width: 360px;
   }
 
+  /*fixed the title on each page*/
+  .fullElems .todolist-container .back-btn h1 {
+    font-size: 2rem;
+  }
+  .fullElems .planner-container .back-btn h1{
+    font-size: 2rem;
+  }
+  .fullElems .motivation-container .back-btn h1{
+    font-size: 2rem;
+  }
+  .fullElems .goals-container .back-btn h1{
+    font-size: 2rem;
+  }
+  .fullElems .todolist-container .back-btn h1 {
+    font-size: 2rem;
+  }
+  .fullElems .pomo-container .back-btn h1{
+    font-size: 2rem;
+  }
 }
 
 
@@ -1712,6 +1728,25 @@ section.fullElems .todolist-container {
     min-width: 100%;
   }
 
+  /*fixed the title on each page*/
+  .fullElems .todolist-container .back-btn h1 {
+    font-size: 1.5rem;
+  }
+  .fullElems .planner-container .back-btn h1{
+    font-size: 1.5rem;
+  }
+  .fullElems .motivation-container .back-btn h1{
+    font-size: 1.5rem;
+  }
+  .fullElems .goals-container .back-btn h1{
+    font-size: 1.5rem;
+  }
+  .fullElems .todolist-container .back-btn h1 {
+    font-size: 1.5rem;
+  }
+  .fullElems .pomo-container .back-btn h1{
+    font-size: 1.5rem;
+  }
 }
 
 
@@ -1951,6 +1986,24 @@ section.fullElems .todolist-container {
     font-size: 1.1rem;
   }
 
+  .fullElems .todolist-container .back-btn h1 {
+    font-size: 1.5rem;
+  }
+  .fullElems .planner-container .back-btn h1{
+    font-size: 1.5rem;
+  }
+  .fullElems .motivation-container .back-btn h1{
+    font-size: 1.5rem;
+  }
+  .fullElems .goals-container .back-btn h1{
+    font-size: 1.5rem;
+  }
+  .fullElems .todolist-container .back-btn h1 {
+    font-size: 1.5rem;
+  }
+  .fullElems .pomo-container .back-btn h1{
+    font-size: 1.5rem;
+  }
 }
 
 
@@ -2053,4 +2106,22 @@ section.fullElems .todolist-container {
     padding: 8px 0;
   }
 
+  .fullElems .todolist-container .back-btn h1 {
+    font-size: 1rem;
+  }
+  .fullElems .planner-container .back-btn h1{
+    font-size: 1rem;
+  }
+  .fullElems .motivation-container .back-btn h1{
+    font-size: 1rem;
+  }
+  .fullElems .goals-container .back-btn h1{
+    font-size: 1rem;
+  }
+  .fullElems .todolist-container .back-btn h1 {
+    font-size: 1rem;
+  }
+  .fullElems .pomo-container .back-btn h1{
+    font-size: 1rem;
+  }
 }
