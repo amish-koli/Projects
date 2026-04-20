@@ -51,12 +51,215 @@ html, body {
     repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(0,0,0,0.08) 39px, rgba(0,0,0,0.08) 40px),
     repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(0,0,0,0.08) 39px, rgba(0,0,0,0.08) 40px);
 }
+/*=====Main Header=====*/
+/* ===== NAV ===== */
 
-/* ===== MAIN PAGE ===== */
-
-section.allElems {
+#main {
   width: 100%;
   min-height: 100%;
+  display: flex;
+  flex-direction: column ;
+}
+
+#main nav {
+  width: 100%;
+  background-color: var(--black);
+  border-bottom: var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+#main nav .nav-in {
+  width: 100%;
+  height: 70px;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#main nav .nav-in h2 {
+  font-size: 1.4rem;
+  font-family: "Bold";
+  color: var(--yellow);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+#main nav .nav-in .theme {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background-color: var(--yellow);
+  border: var(--border);
+  box-shadow: 4px 4px 0px #fff;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+#main nav .nav-in .theme:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #fff;
+  background-color: white;
+}
+
+#main nav .nav-in .theme:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px #fff;
+}
+
+#main nav .nav-in .theme h4 {
+  font-size: 0.85rem;
+  font-family: "Bold";
+  color: var(--black);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ===== HEADER ===== */
+section.allElems {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+section.allElems header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0;
+  border-bottom: var(--border);
+  margin-top: 10px;
+  padding: 40px;
+  color: var(--black);
+}
+
+/* LEFT — date & time */
+section.allElems header .header1 {
+  flex: 1;
+  background-color: var(--black);
+  padding: 36px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  border-right: var(--border);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  background-image: url(https://i.pinimg.com/736x/3a/09/73/3a0973bfbbb733cde4404fe0364af552.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+}
+
+section.allElems header .header1::before {
+  content: "TODAY";
+  position: absolute;
+  top: -14px;
+  left: 30px;
+  background-color: var(--yellow);
+  color: var(--black);
+  font-size: 11px;
+  font-family: "Bold";
+  letter-spacing: 4px;
+  padding: 3px 12px;
+  border: var(--border);
+}
+
+section.allElems header .header1 h2 {
+  font-size: 1rem;
+  font-family: "Regular";
+  /* color: #888; */
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+section.allElems header .header1 h1 {
+  font-size: 3rem;
+  font-family: "Bold";
+  /* color: var(--yellow); */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+section.allElems header .header1 h4 {
+  font-size: 0.85rem;
+  font-family: "Light";
+  /* color: #555; */
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-top: 4px;
+}
+
+/* RIGHT — weather */
+section.allElems header .header2 {
+  width: 320px;
+  background-color: var(--lightblue);
+  padding: 36px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  border-left: var(--border);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+section.allElems header .header2::before {
+  content: "WEATHER";
+  position: absolute;
+  top: -14px;
+  left: 30px;
+  background-color: var(--black);
+  color: var(--lightblue);
+  font-size: 11px;
+  font-family: "Bold";
+  letter-spacing: 4px;
+  padding: 3px 12px;
+  border: var(--border);
+}
+
+section.allElems header .header2 h2 {
+  font-size: 3.2rem;
+  font-family: "Bold";
+  color: var(--black);
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+section.allElems header .header2 h4 {
+  font-size: 1rem;
+  font-family: "Bold";
+  color: var(--black);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-bottom: 2px solid var(--black);
+  padding-bottom: 10px;
+  margin-bottom: 4px;
+}
+
+section.allElems header .header2 h3 {
+  font-size: 0.8rem;
+  font-family: "Regular";
+  color: var(--black);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+section.allElems header .header2 h3.precipitation::before { content: "🌧"; font-size: 14px; }
+section.allElems header .header2 h3.humidity::before      { content: "💧"; font-size: 14px; }
+section.allElems header .header2 h3.wind::before          { content: "💨"; font-size: 14px; }
+/* ===== MAIN PAGE ===== */
+
+section.allElems main {
+  width: 100%;
   background-color: transparent;
   display: flex;
   gap: 30px;
@@ -128,6 +331,7 @@ section.allElems {
 section.fullElems {
   width: 100%;
   height: 100%;
+  /* height: calc(100% - 70px); */
   display: none;
   background-color: var(--tri1);
   background-image: 
@@ -135,7 +339,7 @@ section.fullElems {
     repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(0,0,0,0.06) 39px, rgba(0,0,0,0.06) 40px);
   position: absolute;
   left: 0px;
-  top: 0px;
+  top: 70px;
   color: var(--black);
   padding: 40px;
   font-size: 2rem;
@@ -424,7 +628,6 @@ section.fullElems .todolist-container {
 
 .fullElems .todolist-container .task-app .task-list .task-item .detail-toggle{
     background: none;
-    display:none;
     border: none;
     cursor: pointer;
     color: aliceblue;
@@ -696,7 +899,7 @@ section.fullElems .todolist-container {
   text-transform: uppercase;
 }
 .fullElems .pomo-container .pomo-box{
-  width: 800px;
+  width: min(800px, 100%);
   min-height: 500px;
   background-color: var(--yellow);
   border: var(--border);
@@ -728,6 +931,10 @@ section.fullElems .todolist-container {
   color: white;
   text-align: center;
   font-size:3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 .fullElems .pomo-container .pomo-box .pomo-btn {
   display: flex;
@@ -817,7 +1024,6 @@ section.fullElems .todolist-container {
   font-size: 13px;
   font-family: "Bold";
   letter-spacing: 3px;
-  color: var(--black);
   background-color: var(--black);
   color: #FFD9B3;
   padding: 5px 14px;
@@ -1238,4 +1444,613 @@ section.fullElems .todolist-container {
   transform: translateX(40px);
   margin-bottom: -100px;
   transition: opacity 0.3s ease, transform 0.3s ease, margin 0.3s ease;
+}
+/* ============================================================
+   RESPONSIVE STYLES — append to bottom of style.css
+   
+   BREAKPOINTS USED:
+   — 1024px  : Tablet landscape / small desktop
+   — 768px   : Tablet portrait (iPad)
+   — 480px   : Large mobile (iPhone Plus, Android large)
+   — 360px   : Small mobile (standard Android, iPhone SE)
+
+   METHOD:
+   — mobile-last approach (desktop is the base, we scale down)
+   — only overrides what needs to change at each breakpoint
+   — no variables or selectors renamed — only values adjusted
+   — touch targets kept at minimum 44px height on mobile
+   ============================================================ */
+
+
+/* ============================================================
+   1024px — TABLET LANDSCAPE / SMALL DESKTOP
+   Main things that need help at this size:
+   - task-form is 460px fixed, gets tight
+   - pomo-box is wide, pomo-btn font is 30px (too big)
+   - header1 h1 at 3rem starts to crowd
+   ============================================================ */
+
+@media (max-width: 1024px) {
+
+  /* NAV — tighten padding slightly */
+  #main nav .nav-in {
+    padding: 0 24px;
+  }
+
+  /* HEADER — tighten outer padding */
+  section.allElems header {
+    padding: 30px 24px;
+  }
+
+  section.allElems header .header1 h1 {
+    font-size: 2.4rem;
+  }
+
+  section.allElems header .header2 {
+    width: 280px;
+    padding: 30px 24px;
+  }
+
+  /* CARD GRID — reduce gap and padding */
+  section.allElems main {
+    padding: 40px 24px;
+    gap: 20px;
+  }
+
+  /* FULL PAGES — reduce outer padding */
+  section.fullElems {
+    padding: 30px 24px;
+  }
+
+  /* TODO — task form width shrinks gracefully */
+  .fullElems .todolist-container .back-btn h1 {
+    font-size: 1.5rem;
+  }
+  .fullElems .todolist-container .task-app .task-form {
+    width: 380px;
+  }
+
+  /* POMODORO — scale down buttons and timer */
+  .fullElems .pomo-container .pomo-box .pomo-btn .btn-start,
+  .fullElems .pomo-container .pomo-box .pomo-btn .btn-pause,
+  .fullElems .pomo-container .pomo-box .pomo-btn .btn-reset {
+    font-size: 22px;
+    padding: 10px 20px;
+  }
+
+  .fullElems .pomo-container .pomo-box .pomo-timer {
+    width: 340px;
+  }
+
+  /* GOALS — form panel width shrinks gracefully */
+  .goals-container .goals-form-panel {
+    width: 360px;
+  }
+
+}
+
+
+/* ============================================================
+   768px — TABLET PORTRAIT (iPad, Android tablet)
+   Major layout changes:
+   - header stacks vertically (row → column)
+   - task-form goes full width
+   - planner goes single column
+   - pomo-box tightens further
+   - goals body already flex-wraps, just tighten widths
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+  /* NAV — smaller title, tighter padding */
+  #main nav .nav-in {
+    padding: 0 16px;
+    height: 60px;
+  }
+
+  #main nav .nav-in h2 {
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+
+  #main nav .nav-in .theme {
+    padding: 8px 14px;
+  }
+
+  #main nav .nav-in .theme h4 {
+    font-size: 0.75rem;
+  }
+
+  /* FULL PAGES — adjust top offset to match shorter nav */
+  section.fullElems {
+    top: 60px;
+    height: calc(100dvh - 60px);
+    padding: 20px 16px;
+  }
+
+  /* HEADER — stack vertically */
+  section.allElems header {
+    flex-direction: column;
+    padding: 20px 16px;
+    margin-top: 6px;
+    gap: 16px;
+  }
+
+  /* header1 — full width when stacked */
+  section.allElems header .header1 {
+    padding: 28px 24px;
+    border-right: none;
+    border-bottom: var(--border);
+  }
+
+  section.allElems header .header1 h1 {
+    font-size: 2rem;
+  }
+
+  /* header2 — full width when stacked */
+  section.allElems header .header2 {
+    width: 100%;
+    padding: 28px 24px;
+    border-left: none;
+    border-top: var(--border);
+    flex-direction: row;        /* show temp + details side by side */
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+
+  section.allElems header .header2 h2 {
+    font-size: 2.6rem;
+    margin-right: 16px;
+  }
+
+  /* CARD GRID — 2 cards per row on tablet */
+  section.allElems main {
+    padding: 30px 16px;
+    gap: 16px;
+  }
+
+  .elems {
+    width: calc(50% - 8px);   /* 2 per row with gap */
+    height: 300px;
+  }
+
+  /* BACK BTN — smaller heading */
+  .back-btn {
+    height: 72px;
+    padding: 0 20px;
+    margin-bottom: 24px;
+  }
+
+  .back-btn h1 {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+
+  .back-btn .ri-close-circle-fill {
+    width: 50px;
+    height: 50px;
+    font-size: 2.8rem;
+  }
+
+  /* TODO — task form full width, task list full width */
+  .fullElems .todolist-container .back-btn h1 {
+    font-size: 1.5rem;
+  }
+  .fullElems .todolist-container .task-app {
+    flex-direction: column;
+  }
+
+  .fullElems .todolist-container .task-app .task-form {
+    width: 100%;
+  }
+
+  .fullElems .todolist-container .task-app .task-form form #task-input {
+    font-size: 18px;
+  }
+
+  .fullElems .todolist-container .task-app .task-list {
+    width: 100%;
+    height: 400px;
+  }
+
+  /* PLANNER — single column layout */
+  .planner-container .day-planner .day-planner-time {
+    width: 100%;
+  }
+
+  /* MOTIVATION */
+  .fullElems .motivation-container .moti-card {
+    padding: 28px 20px;
+  }
+
+  .fullElems .motivation-container .moti-card .moti-quote {
+    font-size: 18px;
+    margin-top: 50px;
+  }
+
+  .fullElems .motivation-container .moti-card .btn {
+    right: 20px;
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+
+  /* POMODORO */
+  .fullElems .pomo-container {
+    gap: 30px;
+  }
+
+  .fullElems .pomo-container .pomo-box {
+    min-height: 400px;
+    gap: 20px;
+    padding: 20px 0;
+  }
+
+  .fullElems .pomo-container .pomo-box .pomo-timer {
+    width: 90%;
+    font-size: 2.4rem;
+  }
+
+  .fullElems .pomo-container .pomo-box .pomo-header {
+    width: 90%;
+    font-size: 18px;
+  }
+
+  .fullElems .pomo-container .pomo-box .pomo-btn .btn-start,
+  .fullElems .pomo-container .pomo-box .pomo-btn .btn-pause,
+  .fullElems .pomo-container .pomo-box .pomo-btn .btn-reset {
+    font-size: 18px;
+    padding: 10px 16px;
+  }
+
+  /* GOALS — form full width, list full width */
+  .goals-container .goals-form-panel {
+    width: 100%;
+  }
+
+  .goals-container .goals-list-panel {
+    min-width: 100%;
+  }
+
+}
+
+
+/* ============================================================
+   480px — LARGE MOBILE (iPhone Plus, large Android)
+   Main adjustments:
+   - nav title truncates / shrinks further
+   - cards go single column
+   - heading sizes scale down
+   - paddings tighten to 12px
+   - pomo buttons stack if needed
+   ============================================================ */
+
+@media (max-width: 480px) {
+
+  /* NAV */
+  #main nav .nav-in h2 {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+  }
+
+  #main nav .nav-in .theme h4 {
+    display: none;              /* hide label, keep the button */
+  }
+
+  #main nav .nav-in .theme::after {
+    content: "Theme";           /* shorter label on tiny nav */
+    font-size: 0.75rem;
+    font-family: "Bold";
+    color: var(--black);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* HEADER */
+  section.allElems header {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  section.allElems header .header1 {
+    padding: 22px 16px;
+  }
+
+  section.allElems header .header1 h1 {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+  }
+
+  section.allElems header .header1 h2 {
+    font-size: 0.85rem;
+  }
+
+  section.allElems header .header2 {
+    padding: 22px 16px;
+    flex-direction: column;     /* stack temp + info back to column */
+    align-items: flex-start;
+  }
+
+  section.allElems header .header2 h2 {
+    font-size: 2.2rem;
+  }
+
+  /* CARD GRID — single column on mobile */
+  section.allElems main {
+    padding: 20px 12px;
+    gap: 14px;
+  }
+
+  .elems {
+    width: 100%;
+    height: 240px;
+  }
+
+  .elems > h2 {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+  }
+
+  /* FULL PAGES */
+  section.fullElems {
+    padding: 16px 12px;
+  }
+
+  /* BACK BTN */
+  .back-btn {
+    height: 64px;
+    padding: 0 14px;
+    margin-bottom: 20px;
+  }
+
+  .back-btn h1 {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+  }
+
+  .back-btn .ri-close-circle-fill {
+    width: 44px;
+    height: 44px;
+    font-size: 2.2rem;
+  }
+
+  /* TODO */
+  .fullElems .todolist-container .back-btn h1 {
+    font-size: 1.5rem;
+  }
+  .fullElems .todolist-container .task-app .task-form {
+    padding: 18px;
+  }
+
+  .fullElems .todolist-container .task-app .task-form form #task-input {
+    height: 56px;
+    font-size: 16px;
+  }
+
+  .fullElems .todolist-container .task-app .task-form form textarea {
+    height: 160px;
+    font-size: 16px;
+  }
+
+  .fullElems .todolist-container .task-app .task-form form .task-checkbox-div label {
+    font-size: 15px;
+  }
+
+  .fullElems .todolist-container .task-app .task-form form .addTask {
+    font-size: 15px;
+    letter-spacing: 2px;
+  }
+
+  .fullElems .todolist-container .task-app .task-list {
+    height: 340px;
+    padding: 16px;
+  }
+
+  .fullElems .todolist-container .task-app .task-list .task-item .task-title {
+    font-size: 1.2rem;
+  }
+
+  /* MOTIVATION */
+  .fullElems .motivation-container .moti-card {
+    padding: 24px 16px;
+    min-height: 360px;
+  }
+
+  .fullElems .motivation-container .moti-card .moti-quote {
+    font-size: 16px;
+    margin-top: 46px;
+  }
+
+  .fullElems .motivation-container .moti-card .moti-author {
+    font-size: 14px;
+    margin-top: 24px;
+  }
+
+  .fullElems .motivation-container .moti-card .btn {
+    right: 16px;
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+
+  /* POMODORO */
+  .fullElems .pomo-container {
+    gap: 20px;
+  }
+
+  .fullElems .pomo-container .pomo-box {
+    padding: 16px 0;
+    min-height: 340px;
+  }
+
+  .fullElems .pomo-container .pomo-box .pomo-header {
+    width: 85%;
+    font-size: 16px;
+    min-height: 56px;
+  }
+
+  .fullElems .pomo-container .pomo-box .pomo-timer {
+    width: 85%;
+    font-size: 2rem;
+    min-height: 80px;
+  }
+
+  .fullElems .pomo-container .pomo-box .pomo-btn {
+    flex-wrap: wrap;            /* wrap if all 3 don't fit */
+    justify-content: center;
+    gap: 10px;
+    width: 85%;
+  }
+
+  .fullElems .pomo-container .pomo-box .pomo-btn .btn-start,
+  .fullElems .pomo-container .pomo-box .pomo-btn .btn-pause,
+  .fullElems .pomo-container .pomo-box .pomo-btn .btn-reset {
+    font-size: 16px;
+    padding: 10px 14px;
+    flex: 1;
+    min-width: 80px;
+  }
+
+  /* PLANNER */
+  .day-planner .day-planner-time p {
+    font-size: 11px;
+    padding: 2px 6px;
+  }
+
+  .day-planner .day-planner-time input {
+    padding: 18px 10px 10px 130px;
+    font-size: 18px;
+  }
+
+  /* GOALS */
+  .goals-container .goals-form-panel {
+    padding: 22px 16px;
+  }
+
+  .goals-container .goals-form-panel input[type="text"],
+  .goals-container .goals-form-panel input[type="date"],
+  .goals-container .goals-form-panel textarea {
+    font-size: 16px;
+    padding: 10px 12px;
+  }
+
+  .goals-container .goal-cat-tag {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+
+  .goals-container .goals-add-btn {
+    font-size: 15px;
+    letter-spacing: 2px;
+  }
+
+  .goals-container .goal-card-title {
+    font-size: 1.2rem;
+  }
+
+  .goals-container .goals-empty {
+    font-size: 1.1rem;
+  }
+
+}
+
+
+/* ============================================================
+   360px — SMALL MOBILE (iPhone SE, small Android)
+   Micro-adjustments to prevent any overflow:
+   - nav title even smaller or hidden
+   - header stacks fully
+   - all font-sizes one step smaller
+   - paddings at minimum comfortable value (10-12px)
+   ============================================================ */
+
+@media (max-width: 360px) {
+
+  /* NAV */
+  #main nav .nav-in {
+    padding: 0 10px;
+    height: 56px;
+  }
+
+  #main nav .nav-in h2 {
+    font-size: 0.75rem;
+    letter-spacing: 0;
+  }
+
+  #main nav .nav-in .theme {
+    padding: 6px 10px;
+  }
+
+  /* FULL PAGES — offset for smaller nav */
+  section.fullElems {
+    top: 56px;
+    height: calc(100dvh - 56px);
+    padding: 12px 10px;
+  }
+
+  /* HEADER */
+  section.allElems header .header1 h1 {
+    font-size: 1.3rem;
+  }
+
+  section.allElems header .header2 h2 {
+    font-size: 1.8rem;
+  }
+
+  /* CARDS */
+  .elems {
+    height: 200px;
+  }
+
+  .elems > h2 {
+    font-size: 1.1rem;
+    padding: 8px 12px;
+  }
+
+  /* BACK BTN */
+  .back-btn h1 {
+    font-size: 1.1rem;
+  }
+
+  .back-btn .ri-close-circle-fill {
+    width: 40px;
+    height: 40px;
+    font-size: 1.8rem;
+  }
+.fullElems .todolist-container .back-btn h1 {
+    font-size: 1.5rem;
+  }
+  /* POMODORO — smallest size */
+  .fullElems .pomo-container .pomo-box .pomo-timer {
+    font-size: 1.7rem;
+  }
+
+  .fullElems .pomo-container .pomo-box .pomo-btn .btn-start,
+  .fullElems .pomo-container .pomo-box .pomo-btn .btn-pause,
+  .fullElems .pomo-container .pomo-box .pomo-btn .btn-reset {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  /* MOTIVATION */
+  .fullElems .motivation-container .moti-card .moti-quote {
+    font-size: 14px;
+  }
+
+  /* GOALS */
+  .goals-container .goals-form-panel input[type="text"],
+  .goals-container .goals-form-panel input[type="date"],
+  .goals-container .goals-form-panel textarea {
+    font-size: 14px;
+  }
+
+  .goals-container .goal-cat-tag {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+  .goals-container .prio-btn {
+    font-size: 12px;
+    padding: 8px 0;
+  }
+
 }
