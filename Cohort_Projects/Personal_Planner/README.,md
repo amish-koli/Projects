@@ -1,0 +1,135 @@
+# 🧠 Personal Planner Web App
+
+A simple yet effective personal productivity tool designed to help users manage tasks, stay focused, and maintain motivation — all in one place.
+
+This project combines essential productivity features like a **To-Do List**, **Pomodoro Timer**, and **Goal Planning** with a clean **neumorphic UI** and responsive design.
+
+---
+
+## 🚀 Features
+
+### ✅ To-Do List
+
+* Add, manage, and delete tasks بسهولة
+* Smooth slide animations when tasks are added
+* Tasks are stored using browser cookies (local persistence)
+* Data remains even after closing the browser
+
+---
+
+### ⏳ Pomodoro Timer
+
+* Built-in **25-minute work + 5-minute break** cycle
+* Audio alert when timer ends
+* Helps improve focus and time management
+
+---
+
+### 💬 Motivation Section
+
+* Displays motivational quotes
+* “Change” button to refresh motivation instantly
+* Keeps users mentally engaged while working
+
+---
+
+### 🎯 Goals Section
+
+* Add and manage personal goals
+* Assign priority/importance levels to goals
+* Goals are automatically organized based on priority
+
+---
+
+### 📱 Responsive Design
+
+* Works seamlessly across:
+
+  * Mobile 📱
+  * Tablet 📲
+  * Desktop 💻
+
+---
+
+## 🎨 UI/UX Design
+
+* Designed using **Neumorphism style**
+* Clean, minimal, and distraction-free interface
+* Focus on usability over heavy animations
+* Subtle transitions for better user experience
+
+---
+
+## 🧠 Learning & Development
+
+This project was inspired by **Cohort 2.0**, but extended with custom features such as:
+
+* Task animations
+* Dynamic motivation system
+* Goal prioritization system
+* Enhanced Pomodoro experience
+
+---
+
+## 🤖 Use of AI
+
+AI was used as a support tool during development:
+
+* Debugging complex issues
+* Improving UI/UX decisions
+* Structuring variables and logic
+
+All core implementation and customization were done manually.
+
+---
+
+## 💾 Data Storage
+
+* Uses **browser cookies** for storing user data
+* No backend required
+* Data persists locally for each user session
+
+---
+
+## 🛠️ Tech Stack
+
+* HTML
+* CSS (Neumorphism design)
+* JavaScript
+
+---
+
+## 📌 Limitations
+
+* No cloud sync (data is browser-specific)
+* Basic animations (focused on performance over visuals)
+* No authentication system
+
+---
+
+## 🔮 Future Improvements
+
+* Add user authentication
+* Cloud storage integration
+* More advanced analytics (task tracking, productivity insights)
+* Customizable Pomodoro durations
+
+---
+
+## 📷 Preview
+
+*(Add screenshots or GIFs here if available)*
+
+---
+
+## 🙌 Final Thoughts
+
+This project focuses on **practical productivity over complexity** — a lightweight tool that just works, without unnecessary clutter.
+
+
+
+🔍  Inspect: https://vercel.com/amish-kolis-projects-4a34a761/personal-planner/2vjYkyjgMYoFLcKiFAYGupsKNrbe [4s]
+✅  Production: https://personal-planner-97hhotis8-amish-kolis-projects-4a34a761.vercel.app [9s]
+🔗  Aliased: https://personal-planner-psi.vercel.app [9s]
+📝  Deployed to production. Run `vercel --prod` to overwrite later (https://vercel.link/2F).
+💡  To change the domain or build command, go to https://vercel.com/amish-kolis-projects-4a34a761/personal-planner/settings
