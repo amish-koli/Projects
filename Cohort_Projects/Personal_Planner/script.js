@@ -396,7 +396,7 @@ Goals();
 function weatherFunctionality() {
 
 
-    // I have removed API key for security purpose
+    
     var apiKey = '2ec6b19bd66f43e4a8613212262004'
     var city = 'Mumbai'
 
