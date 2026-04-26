@@ -1,0 +1,108 @@
+/* =====================
+   RESET
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+/* =====================
+   FONT
+===================== */
+@font-face {
+  font-family: "Minecraft";
+  src: url("./fonts/Minecraft-Seven_v2.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* =====================
+   NAVBAR
+===================== */
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+
+  display: flex;
+  align-items: center;              /* ✅ vertical center */
+  justify-content: space-between;
+
+  padding: 0 40px;
+
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 999;
+}
+
+/* =====================
+   LOGO
+===================== */
+#logo img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* =====================
+   NAV LINKS
+===================== */
+#cont-1 {
+  display: flex;
+  gap: 40px;
+
+  font-family: "Minecraft";
+  font-size: 22px;
+  color: #fff;
+}
+
+/* =====================
+   BUTTON
+===================== */
+#button {
+  display: flex;
+  align-items: center;
+}
+
+#button button {
+  padding: 6px 40px;
+
+  font-family: "Minecraft";
+  font-size: 18px;
+  line-height: 1;                 /* ✅ text stays centered */
+
+  border: 3px solid #2A641C;
+  color: #2A641C;
+  background-color: transparent;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#button button:hover {
+  background-color: #2A641C;
+  color: #fff;
+}
+#main {
+  min-height: 100vh;
+  background:
+    url("https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Homepage_Hero-A-1920_Holiday-Game-Sale-25_2560x932_01.jpg");
+
+  background-size: cover;
+  background-position: center;
+}
+
+
+
