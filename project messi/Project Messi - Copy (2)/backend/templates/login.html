@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login to Your Health 🌱💪</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f1de;
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            animation: bounceIn 1.5s ease-out;
+        }
+        form {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            text-align: left;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #388e3c;
+        }
+        .link {
+            margin-top: 10px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Login to Your Health 🌱💪</h1>
+        <form id="login-form" action="#" method="POST">
+            <label for="email">📧 Email</label>
+            <input type="email" id="email" required>
+            <label for="password">🔒 Password</label>
+            <input type="password" id="password" required>
+            <button type="submit">Login 🚀</button>
+        </form>
+        <p class="link">Don't have an account?
+            <a href='register'>Register Here ✍️</a></p>
+        <p class="link"><a href='/'>⬅️ Back to Home</a></p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let form = document.getElementById("login-form");
+
+            if (!form) {
+                console.error("Form not found! Ensure `id='login-form'` exists.");
+                return;
+            }
+
+            form.addEventListener("submit", async function(event) {
+                event.preventDefault(); // Stop page reload
+
+                console.log("Login form submit ho raha hai...");
+
+                let email = document.getElementById("email").value;
+                let password = document.getElementById("password").value;
+
+                try {
+                    let response = await fetch("http://127.0.0.1:5000/api/login", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ email, password })
+                    });
+
+                    let result = await response.json();
+                    console.log("Server Response:", result);
+
+                    if (response.status === 200) {
+                        localStorage.setItem("token", result.token);
+                        alert("Login successful!");
+                        window.location.href = '/home';  // Redirect after login
+                    } else {
+                        alert(result.message);
+                    }
+                } catch (error) {
+                    console.error("Error:", error);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie - Calorie Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #27ae60;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .search-box {
+            margin: 20px 0;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .calorie-info {
+            font-size: 22px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #333;
+        }
+        .nutrition-table, .exercise-list {
+            width: 60%;
+            margin: auto;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        .exercise-list div {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #444;
+        }
+        .register-link {
+            margin-top: 20px;
+        }
+        .chatbot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #27ae60;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="image.png" alt="Foodie Logo">
+        Foodie
+    </div>
+    <div class="search-box">
+        <input type="text" placeholder="Search for calories in your food...">
+        <button>Find Calories</button>
+    </div>
+    <div class="calorie-info">Fish and Chips contains <span style="color: #27ae60;">136.5 Calories per 100g</span></div>
+    <div class="nutrition-table">
+        <table>
+            <tr><th>Nutrient</th><th>Amount per 100g</th></tr>
+            <tr><td>Carbohydrates</td><td>13.6g</td></tr>
+            <tr><td>Cholesterol</td><td>29mg</td></tr>
+            <tr><td>Saturated Fat</td><td>0.6g</td></tr>
+            <tr><td>Total Fat</td><td>5.0g</td></tr>
+            <tr><td>Fiber Content</td><td>0.9g</td></tr>
+            <tr><td>Potassium</td><td>162mg</td></tr>
+            <tr><td>Protein</td><td>8.4g</td></tr>
+            <tr><td>Sodium</td><td>275mg</td></tr>
+            <tr><td>Sugar</td><td>0.4g</td></tr>
+        </table>
+    </div>
+    <div class="exercise-list">
+        <h3>To burn 136.5 calories, you will need to:</h3>
+        <div>🏃 Jog - 15 Minutes</div>
+        <div>🧘 Do Power Yoga - 18 Minutes</div>
+        <div>🏋️ Get a Gym Workout - 14 Minutes</div>
+        <div>🚶 Go for a Brisk Walk - 30 Minutes</div>
+    </div>
+    <div class="register-link">
+        <a href="register.html"><button>Register</button></a>
+    </div>
+    <div class="chatbot" onclick="alert('Chatbot coming soon!')">
+        💬 Chat with us
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Food Detector</title>
+</head>
+<body>
+    <h2>Upload an Image to Detect Food</h2>
+    <input type="file" id="imageUpload">
+    <button onclick="uploadImage()">Detect</button>
+
+    <h3>Result:</h3>
+    <p id="foodName"></p>
+    <p id="calories"></p>
+
+    <script>
+        function uploadImage() {
+            let fileInput = document.getElementById("imageUpload");
+            let file = fileInput.files[0];
+            let formData = new FormData();
+            formData.append("file", file);
+
+            fetch("/api/upload", { method: "POST", body: formData })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("foodName").innerText = "Food: " + data.food;
+                    document.getElementById("calories").innerText = "Calories: " + data.calories;
+                })
+                .catch(error => console.error("Error:", error));
+        }
+    </script>
+</body>
+</html>
