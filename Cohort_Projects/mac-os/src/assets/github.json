@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1,
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000",
+    "title": "Personal Planner",
+    "description": "A responsive productivity app with a to-do list, Pomodoro timer (25/5 cycle with audio alert), and a goal planner that sorts goals by priority. Tasks persist via browser cookies (no backend needed), with a neumorphic UI that works across mobile, tablet and desktop, smooth task animations, and a refreshable motivational quote section.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "repoLink": "https://github.com/amish-koli/Projects/tree/main/Cohort_Projects/Personal_Planner",
+    "demoLink": "https://focuson-six.vercel.app/"
+  }
+]

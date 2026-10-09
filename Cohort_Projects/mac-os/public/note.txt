@@ -1,0 +1,87 @@
+/**
+ * @file: profile.config.ts
+ * @author: Amish Koli
+ * @summary: MERN stack engineer & polymath.
+ */
+
+// --------------------------------------------------
+// 1. CORE DEPENDENCIES & SKILLS
+// --------------------------------------------------
+
+const TECH_STACK = {
+  frontend: [
+    "React.js",
+    "JavaScript (ES6+)",
+    "HTML5",
+    "CSS3",
+  ],
+  backend: [
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+  ],
+  tools: ["Git", "GitHub", "Vercel"]
+};
+
+// --------------------------------------------------
+// 2. KEY MILESTONES
+// --------------------------------------------------
+
+class Milestones {
+
+  /** * FEATURED PROJECT
+   * @name Personal Planner
+   */
+  public PersonalPlanner(): void {
+    this.stack = ["HTML", "CSS", "JavaScript"];
+    this.features = [
+      "To-do list with smooth task animations",
+      "Pomodoro timer (25/5 cycle with audio alert)",
+      "Goal planner sorted by priority",
+    ];
+
+    // Persistent storage via browser cookies - no backend needed
+    // Neumorphic UI, responsive across mobile, tablet & desktop
+    // Live: https://focuson-six.vercel.app/
+  }
+
+  /** * CURRENTLY
+   */
+  public Now(): void {
+    this.focus = "Full-stack development with the MERN stack";
+    this.mindset = "Polymath - always learning something new";
+  }
+}
+
+// --------------------------------------------------
+// 3. ACADEMIC BACKGROUND
+// --------------------------------------------------
+
+const education = new Map<string, string>([
+  ["RGIT Mumbai", "BE in Artificial Intelligence & Data Science (Final Year)"]
+]);
+
+// --------------------------------------------------
+// 4. FIND ME ONLINE
+// --------------------------------------------------
+
+const links = {
+  email: "amishkoli77@gmail.com",
+  github: "github.com/amish-koli",
+  linkedin: "linkedin.com/in/amishkoli77",
+  x: "x.com/Amish_koli7",
+};
+
+export default new Milestones();
+
+
+```bash
+# TERMINAL OUTPUT
+# ---------------------------------------
+$ user --status
+> Name: Amish Koli
+> Status: Open to Opportunities
+> Location: Mumbai, India
+> Loading Assets... [||||||||||] 100%
+> Ready.
+```
