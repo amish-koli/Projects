@@ -3,7 +3,7 @@
 # Requires the PyMongo package.
 # https://api.mongodb.com/python/current
 
-client = MongoClient('mongodb+srv://amishkoli621:Akmonzok767@cluster0.fz2wy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+client = MongoClient('')
 filter={}
 
 result = client['calorie_finder']['food_items'].find(
